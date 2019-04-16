@@ -2,10 +2,12 @@
 export TERM=xterm-256color
 export PAGER=most
 export GIT='https://www.github.com/jasper-zanjani/'
+export PROMPT_COMMAND='echo; pwd; ls;'
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 
 ## PATH additions
 export PATH=$PATH':/usr/src/bin'
-export PROMPT_COMMAND='echo; pwd; ls;'
 
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
@@ -20,4 +22,5 @@ fi
 source aliases.sh
 source prompt.sh
 
-neofetch; ll
+neofetch
+exa -l
