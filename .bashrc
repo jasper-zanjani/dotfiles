@@ -5,7 +5,7 @@ export GIT='https://www.github.com/jasper-zanjani/'
 
 ## PATH additions
 export PATH=$PATH':/usr/src/bin'
-
+export PROMPT_COMMAND='echo; pwd; ls;'
 
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
@@ -19,3 +19,5 @@ fi
 
 source aliases.sh
 source prompt.sh
+
+neofetch; ll
