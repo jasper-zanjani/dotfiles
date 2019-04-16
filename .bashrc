@@ -17,4 +17,5 @@ then
   alias python="winpty python.exe"
 fi
 
-source ~/.dotfiles/aliases.sh
+source aliases.sh
+source prompt.sh
