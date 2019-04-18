@@ -1,3 +1,5 @@
+# This file should be placed in $HOME/.config/fish
+
 # Fish configuration file
 ## aliases
 alias irb='irb --simple-prompt'
