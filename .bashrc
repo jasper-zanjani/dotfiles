@@ -1,14 +1,3 @@
-## Environment variables
-export TERM=xterm-256color
-export PAGER=most
-export GIT='https://www.github.com/jasper-zanjani/'
-export PROMPT_COMMAND='echo; pwd; ls;'
-export HISTSIZE=-1
-export HISTFILESIZE=-1
-
-## PATH additions
-export PATH=$PATH':/usr/src/bin'
-
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
 then
@@ -19,8 +8,8 @@ then
   alias python="winpty python.exe"
 fi
 
-source aliases.sh
-source prompt.sh
+source ~/.dotfiles/aliases.sh
+source ~/.dotfiles/prompt.sh
+source ~/.dotfiles/env.sh
 
 neofetch
-exa -l
