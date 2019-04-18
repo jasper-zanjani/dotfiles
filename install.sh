@@ -3,16 +3,21 @@
 packages=(
   bat
   bpython
+  dmenu
   exa
   fish
   fzf
+  i3
   gparted
   neofetch
+  polybar
+  qbittorrent
   rxvt-unicode
   vim
 )
 
 sudo pacman -Syu && sudo pacman -S ${packages[*]}
+yay -S rakudo
 
 ## Install Vim extensions
 mkdir -p ~/.vim/pack/jasper-zanjani/start/ && cd $_

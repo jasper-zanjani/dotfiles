@@ -14,6 +14,7 @@ export PROMPT_COMMAND='
   fi'
 export HISTSIZE=-1
 export HISTFILESIZE=-1
+export MOST_INIT="$HOME/.mostrc"
 
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH':/home/jasper/perl6/bin'
