@@ -15,5 +15,8 @@ export PROMPT_COMMAND='
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 export MOST_INIT="$HOME/.mostrc"
+export EDITOR="vim"
+export TERMINAL="konsole-picker"
 
 export PATH=$PATH':/usr/src/bin'
+export PATH=$PATH":$HOME/Scripts"

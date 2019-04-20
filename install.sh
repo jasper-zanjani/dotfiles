@@ -5,6 +5,7 @@ packages=(
   bpython
   dmenu
   exa
+  feh
   fish
   fzf
   i3
@@ -12,6 +13,7 @@ packages=(
   neofetch
   polybar
   qbittorrent
+  rofi
   rxvt-unicode
   vim
 )
@@ -27,3 +29,4 @@ git clone "https://github.com/plasticboy/vim-markdown"
 git clone "https://github.com/terryma/vim-multiple-cursors" 
 git clone "https://github.com/digitaltoad/vim-pug"
 git clone "https://github.com/junegunn/limelight.vim"
+git clone "https://github.com/junegunn/goyo.vim"

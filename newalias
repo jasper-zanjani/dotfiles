@@ -1,0 +1,1 @@
+alias k1='konsole --profile $(shuf -n 1 -e $(konsole --list-profiles)) &'
