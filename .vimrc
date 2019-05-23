@@ -5,9 +5,8 @@ set number
 set laststatus=2
 set noshowmode
 syntax on
-
 map <C-o> :NERDTreeToggle<CR>
-nmap <F12> :Goyo <bar> Limelight!! <CR>
 
-let g:limelight_conceal_ctermfg = 'gray'
-let g:airline_theme = 'typewriter'
+let g:limelight_conceal_ctermfg = 'darkgray'
+":highlight LineNr ctermfg=darkcyan
+:colo KDEPlasmaTurquoise
