@@ -27,7 +27,10 @@ if [[ $OSTYPE =~ 'linux' ]]
 then
   export HISTSIZE=-1
   export HISTFILESIZE=-1
-  alias k='konsole --profile $(shuf -n 1 -e $(konsole --list-profiles)) &'
+  alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
+  alias kl='konsole --profile $(shuf -n1 $HOME/.local/share/konsole/lightprofiles) &> /dev/null &'
+  alias cfgpb='$EDITOR $HOME/.config/polybar/default.polybar'
+  alias cfgi3='$EDITOR $HOME/.config/i3/config'
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
@@ -42,8 +45,10 @@ alias ls='exa --group-directories-first'
 alias ll='exa --group-directories-first -l'
 alias np='nano -w PKGBUILD'
 alias more='less'
-alias refresh-prompt='
-  export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
+alias refresh-prompt='export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
+alias nflight='for n in {1..6}; do neofetch --colors $n 0 0 $n 0 0 --ascii_colors $n; done;'
+alias nfdark='for n in {1..6}; do neofetch --colors $n 255 255 $n 255 255 --ascii_colors $n; done;'
+alias cfgnb='$EDITOR $HOME/.newsboat/config'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(shuf -en 1 31 32 33 34 35 36)
@@ -52,7 +57,7 @@ export TERM='xterm-256color'
 export PAGER='most'
 export BAT_PAGER='less'
 export MOST_INIT="$HOME/.mostrc"
-export EDITOR="vim"
+export EDITOR='vim'
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
 export PROMPT_COMMAND='
@@ -65,5 +70,5 @@ export PROMPT_COMMAND='
   else 
     echo $CONTENTS
   fi'
-
-neofetch | lolcat
+export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
+neofetch
