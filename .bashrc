@@ -65,7 +65,7 @@ export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
 # export PROMPT_COMMAND='
 #   printf "  \e[${COLOR2}m`pwd`\e[90m "
-#   CONTENTS=$(lsd --reverse --sort=modified | tr "\n" " ")
+#   CONTENTS=$(exa --reverse --sort=modified | tr "\n" " ")
 #   if [ ${#CONTENTS} -gt $COLUMNS ]
 #   then
 #     echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
@@ -73,4 +73,14 @@ export PATH=$PATH":$HOME/Scripts"
 #   else 
 #     echo $CONTENTS
 #   fi'
+export PROMPT_COMMAND='
+  printf "  \e[${COLOR2}m`pwd`\e[90m "
+  CONTENTS=$(lsd --timesort | tr "\n" " ")
+  if [ ${#CONTENTS} -gt $COLUMNS ]
+  then
+    echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
+    echo " ..."
+  else 
+    echo $CONTENTS
+  fi'
 export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
