@@ -40,9 +40,12 @@ alias dotfile='git --git-dir=$HOME/dotfiles/.git --work-tree=$PWD'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto -d recurse'
-alias la='lsd --group-directories-first -a'
-alias ls='lsd --group-directories-first'
-alias ll='lsd --group-directories-first -l'
+alias la='lsd --group-dirs --icon-theme=unicode -a'
+alias ls='lsd --group-dirs --icon-theme=unicode '
+alias ll='lsd --group-dirs --icon-theme=unicode  -l'
+# alias la='exa --group-directories-first -a'
+# alias ls='exa --group-directories-first'
+# alias ll='exa --group-directories-first -l'
 alias np='nano -w PKGBUILD'
 alias more='less'
 alias refresh-prompt='export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
@@ -60,14 +63,14 @@ export MOST_INIT="$HOME/.mostrc"
 export EDITOR='vim'
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
-export PROMPT_COMMAND='
-  printf "  \e[${COLOR2}m`pwd`\e[90m "
-  CONTENTS=$(lsd --reverse --sort=modified | tr "\n" " ")
-  if [ ${#CONTENTS} -gt $COLUMNS ]
-  then
-    echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
-    echo " ..."
-  else 
-    echo $CONTENTS
-  fi'
+# export PROMPT_COMMAND='
+#   printf "  \e[${COLOR2}m`pwd`\e[90m "
+#   CONTENTS=$(lsd --reverse --sort=modified | tr "\n" " ")
+#   if [ ${#CONTENTS} -gt $COLUMNS ]
+#   then
+#     echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
+#     echo " ..."
+#   else 
+#     echo $CONTENTS
+#   fi'
 export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
