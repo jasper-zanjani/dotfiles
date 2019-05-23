@@ -6,7 +6,7 @@ setkey "up" "k"
 %  - overstrike  Headings
 %  - underline   Variable placeholders
 
-color overstrike  blue default
-color underline   blue default 
+color overstrike  color42 default
+color underline   color42 default 
 color normal      default default
-color status      black blue
+color status      black color42
