@@ -40,9 +40,9 @@ alias dotfile='git --git-dir=$HOME/dotfiles/.git --work-tree=$PWD'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto -d recurse'
-alias la='lsd --group-dirs --icon-theme=unicode -a'
-alias ls='lsd --group-dirs --icon-theme=unicode '
-alias ll='lsd --group-dirs --icon-theme=unicode  -l'
+alias la='lsd --group-dirs first --icon-theme=unicode -a'
+alias ls='lsd --group-dirs first --icon-theme=unicode '
+alias ll='lsd --group-dirs first --icon-theme=unicode  -l'
 # alias la='exa --group-directories-first -a'
 # alias ls='exa --group-directories-first'
 # alias ll='exa --group-directories-first -l'
@@ -59,7 +59,7 @@ export PS1="\e[${COLOR1}m$ \e[39m"
 export TERM='xterm-256color'
 export PAGER='most'
 export BAT_PAGER='less'
-export MOST_INIT="$HOME/.mostrc"
+export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
 export EDITOR='vim'
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
@@ -83,4 +83,3 @@ export PROMPT_COMMAND='
   else 
     echo $CONTENTS
   fi'
-export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
