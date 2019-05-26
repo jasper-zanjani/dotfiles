@@ -31,7 +31,8 @@ then
   alias kl='konsole --profile $(shuf -n1 $HOME/.local/share/konsole/lightprofiles) &> /dev/null &'
   alias cfgpb='$EDITOR $HOME/.config/polybar/default.polybar'
   alias cfgi3='$EDITOR $HOME/.config/i3/config'
-  alias cfgca='$EDITOR $HOME/.config/castero/castero.config'
+  alias cfgca='$EDITOR $HOME/.config/castero/castero.conf'
+  alias cfgqt='$EDITOR $HOME/.config/qtile/config.py'
 fi
 
 alias cat="cat -n"      # number lines
@@ -86,3 +87,5 @@ export PROMPT_COMMAND='
   else 
     echo $CONTENTS
   fi'
+
+. yakuake-blurry-bg-fix
