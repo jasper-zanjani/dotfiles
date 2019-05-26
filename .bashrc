@@ -31,6 +31,7 @@ then
   alias kl='konsole --profile $(shuf -n1 $HOME/.local/share/konsole/lightprofiles) &> /dev/null &'
   alias cfgpb='$EDITOR $HOME/.config/polybar/default.polybar'
   alias cfgi3='$EDITOR $HOME/.config/i3/config'
+  alias cfgca='$EDITOR $HOME/.config/castero/castero.config'
 fi
 
 alias cat="cat -n"      # number lines
