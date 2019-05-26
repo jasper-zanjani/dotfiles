@@ -33,7 +33,7 @@ then
   alias cfgi3='$EDITOR $HOME/.config/i3/config'
 fi
 
-alias cat="cat -b a"    # number lines
+alias cat="cat -n"      # number lines
 alias cp="cp -i"        # confirm before overwriting something
 alias df='df -h'        # human-readable sizes
 alias free='free -m'    # show sizes in MB
