@@ -33,6 +33,7 @@ then
   alias cfgi3='$EDITOR $HOME/.config/i3/config'
 fi
 
+alias cat="cat -b a"    # number lines
 alias cp="cp -i"        # confirm before overwriting something
 alias df='df -h'        # human-readable sizes
 alias free='free -m'    # show sizes in MB
@@ -43,6 +44,7 @@ alias grep='grep --color=auto -d recurse'
 alias la='lsd --group-dirs first --icon-theme=unicode -a'
 alias ls='lsd --group-dirs first --icon-theme=unicode '
 alias ll='lsd --group-dirs first --icon-theme=unicode  -l'
+alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
 # alias la='exa --group-directories-first -a'
 # alias ls='exa --group-directories-first'
 # alias ll='exa --group-directories-first -l'
