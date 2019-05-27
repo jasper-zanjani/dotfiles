@@ -151,4 +151,5 @@ bindsym $mod+$alt+a       gaps outer top all plus 5
 bindsym $mod+Shift+p      gaps top current set 20
 
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
-exec feh --bg-scale /usr/share/wallpapers/Breath/contents/images/2560x1440.png 
+exec --no-startup-id feh --bg-scale /usr/share/backgrounds/manjaro-gnome/manjaro-gnome-lockscreen_1920_1200px.jpg
+# exec --no-startup-id feh --bg-scale /usr/share/wallpapers/Breath/contents/images/2560x1440.png 
