@@ -31,11 +31,8 @@ then
   alias kl='konsole --profile $(shuf -n1 $HOME/.local/share/konsole/lightprofiles) &> /dev/null &'
   alias cfgpb='$EDITOR $HOME/.config/polybar/default.polybar'
   alias cfgi3='$EDITOR $HOME/.config/i3/config'
-  alias cfgca='$EDITOR $HOME/.config/castero/castero.conf'
-  alias cfgqt='$EDITOR $HOME/.config/qtile/config.py'
 fi
 
-alias cat="cat -n"      # number lines
 alias cp="cp -i"        # confirm before overwriting something
 alias df='df -h'        # human-readable sizes
 alias free='free -m'    # show sizes in MB
@@ -43,13 +40,9 @@ alias dotfile='git --git-dir=$HOME/dotfiles/.git --work-tree=$PWD'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto -d recurse'
-alias la='lsd --group-dirs first --icon-theme=unicode -a'
-alias ls='lsd --group-dirs first --icon-theme=unicode '
-alias ll='lsd --group-dirs first --icon-theme=unicode  -l'
-alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
-# alias la='exa --group-directories-first -a'
-# alias ls='exa --group-directories-first'
-# alias ll='exa --group-directories-first -l'
+alias la='exa --group-directories-first -a'
+alias ls='exa --group-directories-first'
+alias ll='exa --group-directories-first -l'
 alias np='nano -w PKGBUILD'
 alias more='less'
 alias refresh-prompt='export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
@@ -63,23 +56,13 @@ export PS1="\e[${COLOR1}m$ \e[39m"
 export TERM='xterm-256color'
 export PAGER='most'
 export BAT_PAGER='less'
-export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
+export MOST_INIT="$HOME/.mostrc"
 export EDITOR='vim'
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
-# export PROMPT_COMMAND='
-#   printf "  \e[${COLOR2}m`pwd`\e[90m "
-#   CONTENTS=$(exa --reverse --sort=modified | tr "\n" " ")
-#   if [ ${#CONTENTS} -gt $COLUMNS ]
-#   then
-#     echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
-#     echo " ..."
-#   else 
-#     echo $CONTENTS
-#   fi'
 export PROMPT_COMMAND='
   printf "  \e[${COLOR2}m`pwd`\e[90m "
-  CONTENTS=$(lsd --timesort | tr "\n" " ")
+  CONTENTS=$(exa --reverse --sort=modified | tr "\n" " ")
   if [ ${#CONTENTS} -gt $COLUMNS ]
   then
     echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
@@ -87,5 +70,5 @@ export PROMPT_COMMAND='
   else 
     echo $CONTENTS
   fi'
-
-. yakuake-blurry-bg-fix
+export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
+neofetch
