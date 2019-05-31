@@ -1,6 +1,11 @@
-#
-# ~/.bashrc
-#
+# 
+#      .o8                          oooo                           
+#     "888                          `888                           
+#      888oooo.   .oooo.    .oooo.o  888 .oo.   oooo d8b  .ooooo.  
+#      d88' `88b `P  )88b  d88(  "8  888P"Y88b  `888""8P d88' `"Y8 
+#      888   888  .oP"888  `"Y88b.   888   888   888     888       
+# .o.  888   888 d8(  888  o.  )88b  888   888   888     888   .o8 
+# Y8P  `Y8bod8P' `Y888""8o 8""888P' o888o o888o d888b    `Y8bod8P' 
 
 caps () {
   xmodmap $HOME/.caps-esc-swap
@@ -103,4 +108,3 @@ export MOST_INIT="$HOME/.mostrc"
 export EDITOR='vim'
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
-
