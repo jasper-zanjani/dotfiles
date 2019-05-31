@@ -13,7 +13,7 @@ gitnow () {
 dtf () {
   git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) add $1 && \
   git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) commit -m "Updating $1" && \
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) push 
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) --quiet push &
 }
 
 
