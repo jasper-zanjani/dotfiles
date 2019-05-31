@@ -6,6 +6,16 @@ caps () {
   xmodmap $HOME/.caps-esc-swap
 }
 
+gitnow () {
+  git add . && git commit -m $1 && git push
+}
+
+dtf () {
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) add $1 && \
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) commit -m "Updating $1" && \
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) push 
+}
+
 
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
@@ -94,4 +104,3 @@ export EDITOR='vim'
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
 
-caps
