@@ -25,14 +25,14 @@ keys = [
   # Unsplit = 1 window displayed, like Max layout, but still with
   # multiple stack panes
   Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-  Key([mod], "Return", lazy.spawn("xterm")),
+  Key([mod], "Return", lazy.spawn("konsole")),
 
   # Toggle between different layouts as defined below
   Key([mod], "Tab", lazy.next_layout()),
   Key([mod], "w", lazy.window.kill()),
 
-  Key([mod, "control"], "r", lazy.restart()),
-  Key([mod, "control"], "q", lazy.shutdown()),
+  Key([mod, "shift"], "x", lazy.restart()),
+  Key([mod, "shift"], "e", lazy.shutdown()),
   Key([mod], "r", lazy.spawncmd()),
 ]
 
@@ -87,8 +87,8 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules: List = []
 main = None
-follow_mouse_focus = True
-bring_front_click = False
+follow_mouse_focus = False  
+bring_front_click = True
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
   {'wmclass': 'confirm'},
