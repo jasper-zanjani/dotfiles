@@ -2,6 +2,11 @@
 # ~/.bashrc
 #
 
+caps () {
+  xmodmap $HOME/.caps-esc-swap
+}
+
+
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
 then
@@ -76,6 +81,7 @@ alias refresh-prompt='export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
 alias nflight='for n in {1..6}; do neofetch --colors $n 0 0 $n 0 0 --ascii_colors $n; done;'
 alias nfdark='for n in {1..6}; do neofetch --colors $n 255 255 $n 255 255 --ascii_colors $n; done;'
 alias cfgnb='$EDITOR $HOME/.config/newsboat/config'
+alias cfgnbu='$EDITOR $HOME/.config/newsboat/urls'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(shuf -en 1 31 32 33 34 35 36)
@@ -87,3 +93,5 @@ export MOST_INIT="$HOME/.mostrc"
 export EDITOR='vim'
 export PATH=$PATH':/usr/src/bin'
 export PATH=$PATH":$HOME/Scripts"
+
+caps
