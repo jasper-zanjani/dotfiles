@@ -1,6 +1,34 @@
-#
-# ~/.bashrc
-#
+#### 
+###    .o8                          oooo                           
+##    "888                          `888                           
+#      888oooo.   .oooo.    .oooo.o  888 .oo.   oooo d8b  .ooooo.  
+#      d88' `88b `P  )88b  d88(  "8  888P"Y88b  `888""8P d88' `"Y8 
+#      888   888  .oP"888  `"Y88b.   888   888   888     888       
+# .o.  888   888 d8(  888  o.  )88b  888   888   888     888   .o8 
+# Y8P  `Y8bod8P' `Y888""8o 8""888P' o888o o888o d888b    `Y8bod8P' 
+
+caps () {
+  xmodmap $HOME/.caps-esc-swap
+}
+
+gitnow () {
+  git add . && git commit -m $1 && git push
+}
+
+dtf () {
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) add $1 && \
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) commit -m "Updating $1" && \
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) push 
+}
+
+pw () {
+  echo '
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+1234567890
+@!#$%^&*()_-+=[]{}:;,.<>
+' | fold -w1 | shuf -r | head -c40 | tr -d "\n" | xargs echo
+}
 
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
@@ -33,6 +61,8 @@ then
     else 
       echo $CONTENTS
     fi'
+  alias python='python3'
+  alias pip='pip3'
 fi
 
 ## Special settings for Linux
