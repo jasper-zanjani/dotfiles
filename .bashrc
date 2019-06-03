@@ -1,26 +1,6 @@
-#### 
-###    .o8                          oooo                           
-##    "888                          `888                           
-#      888oooo.   .oooo.    .oooo.o  888 .oo.   oooo d8b  .ooooo.  
-#      d88' `88b `P  )88b  d88(  "8  888P"Y88b  `888""8P d88' `"Y8 
-#      888   888  .oP"888  `"Y88b.   888   888   888     888       
-# .o.  888   888 d8(  888  o.  )88b  888   888   888     888   .o8 
-# Y8P  `Y8bod8P' `Y888""8o 8""888P' o888o o888o d888b    `Y8bod8P' 
-
-caps () {
-  xmodmap $HOME/.caps-esc-swap
-}
-
-gitnow () {
-  git add . && git commit -m $1 && git push
-}
-
-dtf () {
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) add $1 && \
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) commit -m "Updating $1" && \
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) push 
-}
-
+#
+# ~/.bashrc
+#
 
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
@@ -95,8 +75,7 @@ alias more='less'
 alias refresh-prompt='export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
 alias nflight='for n in {1..6}; do neofetch --colors $n 0 0 $n 0 0 --ascii_colors $n; done;'
 alias nfdark='for n in {1..6}; do neofetch --colors $n 255 255 $n 255 255 --ascii_colors $n; done;'
-alias cfgnb='$EDITOR $HOME/.config/newsboat/config'
-alias cfgnbu='$EDITOR $HOME/.config/newsboat/urls'
+alias cfgnb='$EDITOR $HOME/.newsboat/config'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(shuf -en 1 31 32 33 34 35 36)

@@ -1,78 +1,82 @@
 #vim:filetype=i3
 
 ###
-## Formatting
-#
+#  Formatting
+###
+
 for_window [class=".*"] border pixel 2
 for_window [class=".*Anki"] floating enable
-#
+
 set_from_resource $orange     bewareorange    #f67400
 set_from_resource $turquoise  mellowturquoise #1cdc9a
-#
+
 font                          pango:Hack 18
+
 #                         border           bg         indicator   child
 client.focused            $turquoise      $turquoise  $turquoise  $turquoise
 
 ###
-## Mod keys
-#  Mod1: Alt, Mod2: Num_Lock, Mod3: ..., Mod4: Super, Mod5: Mode_switch
+#  Mod keys
+###  Mod1: Alt, Mod2: Num_Lock, Mod3: ..., Mod4: Super, Mod5: Mode_switch
+
 set $alt                  Mod1
 set $mod                  Mod4
 focus_follows_mouse       no
-#
+
 set $randcolor            --profile $(shuf -n 1 -e $(konsole --list-profiles))
 set $term                 konsole
 floating_modifier         $mod 
-#
+
 bindsym $mod+Shift+Return split v , exec $term
 bindsym $mod+Return       split h , exec $term
 bindsym $mod+r            exec rofi -show run
 
 ###
-## Window management
-#
+#  Window management
+###
+
 bindsym $mod+h            focus left
 bindsym $mod+j            focus down
 bindsym $mod+k            focus up
 bindsym $mod+l            focus right
-#
+
 bindsym $mod+Left         focus left
 bindsym $mod+Down         focus down
 bindsym $mod+Up           focus up
 bindsym $mod+Right        focus right
-#
+
 bindsym $mod+Shift+h      move left
 bindsym $mod+Shift+j      move down
 bindsym $mod+Shift+k      move up
 bindsym $mod+Shift+l      move right
-#
+
 bindsym $mod+Shift+Left   move left
 bindsym $mod+Shift+Down   move down
 bindsym $mod+Shift+Up     move up
 bindsym $mod+Shift+Right  move right
-#
+
 bindsym $mod+Shift+v      split h
 bindsym $mod+v            split v
-#
+
 bindsym $mod+w            kill
-#
+
 # enter fullscreen mode for the focused container
 bindsym $mod+F11          fullscreen toggle
-#
+
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+Shift+F11    layout stacking
 # bindsym $mod+F11          layout tabbed
 bindsym $mod+e            layout toggle split
-#
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-#
+
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-#
+
 # bindsym $mod+a focus parent # focus the parent container
 # bindsym $mod+d focus child # focus the child container
-#
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1                  
@@ -87,8 +91,9 @@ set $ws9                  
 set $ws10                 
 
 ###
-##  Workspace management
-#
+#  Workspace management
+###
+
 bindsym $mod+F1           workspace $ws1
 bindsym $mod+F2           workspace $ws2
 bindsym $mod+F3           workspace $ws3
@@ -101,7 +106,7 @@ bindsym $mod+F9           workspace $ws9
 bindsym $mod+F10          workspace $ws10
 bindsym $mod+Prior        workspace prev
 bindsym $mod+Next         workspace next
-#
+
 bindsym $mod+Shift+F1     move container to workspace $ws1
 bindsym $mod+Shift+F2     move container to workspace $ws2
 bindsym $mod+Shift+F3     move container to workspace $ws3
@@ -116,23 +121,26 @@ bindsym $mod+Shift+Prior  move container to workspace prev
 bindsym $mod+Shift+Next   move container to workspace next
 
 ###
-##  Reloading and exiting
-#
+#  Reloading and exiting
+###
+
 bindsym $mod+z            reload
 bindsym $mod+Shift+z      restart
 bindsym $mod+Shift+q      exec i3-msg exit
 
 ###
-## Resizing
-#
+#  Resizing
+###
+
 bindsym $mod+$alt+l       resize shrink width   5 px or 1 ppt
 bindsym $mod+$alt+k       resize grow   height  5 px or 1 ppt
 bindsym $mod+$alt+j       resize shrink height  5 px or 1 ppt
 bindsym $mod+$alt+h       resize grow   width   4 px or 1 ppt
 
 ###
-## Gaps settings
-#
+#  Gaps settings
+###
+
 gaps inner 20
 gaps outer 20
 bindsym $mod+minus        gaps inner all minus 5
@@ -141,7 +149,6 @@ bindsym $mod+Shift+minus  gaps outer all minus 5
 bindsym $mod+Shift+plus   gaps outer all plus 5
 bindsym $mod+$alt+a       gaps outer top all plus 5
 bindsym $mod+Shift+p      gaps top current set 20
-#
+
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
-exec --no-startup-id feh --bg-scale /usr/share/backgrounds/manjaro-gnome/manjaro-gnome-lockscreen_1920_1200px.jpg
-# exec --no-startup-id feh --bg-scale /usr/share/wallpapers/Breath/contents/images/2560x1440.png 
+exec feh --bg-scale /usr/share/wallpapers/Breath/contents/images/2560x1440.png 

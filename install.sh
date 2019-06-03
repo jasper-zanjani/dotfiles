@@ -10,6 +10,7 @@ packages=(
   fzf
   i3
   gparted
+  lsd
   neofetch
   polybar
   qbittorrent

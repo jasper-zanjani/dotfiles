@@ -1,16 +1,1 @@
 URxvt*geometry:240x84
-
-! KDE Colors
-!   - Custom colors taken from KDE Plasma design guide
-charcoalgrey:#31363b
-bewareorange:#f67400
-shadeblack:#232627
-cardboardgrey:#eff0f1
-alternategrey:#bdc3c7
-icongrey:#4d4d4d
-iconblue:#1d99f3
-plasmablue:#3daee9
-mellowturquoise:#1cdc9a
-sunbeamyellow:#c9ce3b
-noblefir:#27ae60
-dangerred:#ed1515
