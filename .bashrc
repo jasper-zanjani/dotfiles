@@ -12,7 +12,18 @@ caps () {
 }
 
 gitnow () {
-  git add . && git commit -m $1 && git push
+  echo $1
+  echo $#
+  git add . 
+  if [ $# < 1 ]
+  then 
+    echo "Using user-provided commit message"
+    git commit -m "$1"
+  else
+    echo "No commit message, filling in"
+    git commit -m "Updating"
+  fi
+  git push
 }
 
 dtf () {
@@ -22,12 +33,7 @@ dtf () {
 }
 
 pw () {
-  echo '
-abcdefghijklmnopqrstuvwxyz
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-1234567890
-@!#$%^&*()_-+=[]{}:;,.<>
-' | fold -w1 | shuf -r | head -c40 | tr -d "\n" | xargs echo
+  echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | head -c40 | tr -d "\n" | xargs echo
 }
 
 ## Special settings for Windows 
@@ -105,7 +111,7 @@ alias more='less'
 alias refresh-prompt='export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
 alias nflight='for n in {1..6}; do neofetch --colors $n 0 0 $n 0 0 --ascii_colors $n; done;'
 alias nfdark='for n in {1..6}; do neofetch --colors $n 255 255 $n 255 255 --ascii_colors $n; done;'
-alias cfgnb='$EDITOR $HOME/.newsboat/config'
+alias cfgnb='$EDITOR $HOME/.config/newsboat/config'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(shuf -en 1 31 32 33 34 35 36)
@@ -115,5 +121,5 @@ export PAGER='most'
 export BAT_PAGER='less'
 export MOST_INIT="$HOME/.mostrc"
 export EDITOR='vim'
-export PATH=$PATH':/usr/src/bin'
-export PATH=$PATH":$HOME/Scripts"
+[[ $PATH =~ ':/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
+[[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
