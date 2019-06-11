@@ -12,8 +12,6 @@ caps () {
 }
 
 gitnow () {
-  echo $1
-  echo $#
   git add . 
   if [ $# < 1 ]
   then 
@@ -23,7 +21,7 @@ gitnow () {
     echo "No commit message, filling in"
     git commit -m "Updating"
   fi
-  git push
+  git push -q
 }
 
 dtf () {
@@ -112,6 +110,7 @@ alias refresh-prompt='export PS1="\e[$(shuf -en 1 91 92 93 94 95 96)m$ \e[39m"'
 alias nflight='for n in {1..6}; do neofetch --colors $n 0 0 $n 0 0 --ascii_colors $n; done;'
 alias nfdark='for n in {1..6}; do neofetch --colors $n 255 255 $n 255 255 --ascii_colors $n; done;'
 alias cfgnb='$EDITOR $HOME/.config/newsboat/config'
+alias cfgnbu='$EDITOR $HOME/.config/newsboat/urls'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(shuf -en 1 31 32 33 34 35 36)
