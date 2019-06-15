@@ -13,7 +13,7 @@ caps () {
 
 gitnow () {
   git add . 
-  if [[ $# < 1 ]]
+  if [[ $# > 1 ]]
   then 
     echo "Using user-provided commit message"
     git commit -m "$1"
