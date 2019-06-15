@@ -13,7 +13,7 @@ caps () {
 
 gitnow () {
   git add . 
-  if [ $# < 1 ]
+  if [[ $# < 1 ]]
   then 
     echo "Using user-provided commit message"
     git commit -m "$1"
@@ -32,6 +32,15 @@ dtf () {
 
 pw () {
   echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | head -c40 | tr -d "\n" | xargs echo
+}
+
+copy () {
+  if [[ $# < 1 ]]
+  then
+    echo "Usage: copy <file>"
+  else
+    bat $1 | xclip -selection clipboard
+  fi
 }
 
 ## Special settings for Windows 
