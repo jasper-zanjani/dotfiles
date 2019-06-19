@@ -13,7 +13,7 @@ caps () {
 
 gitnow () {
   git add . 
-  if [[ $# > 1 ]]
+  if [[ $# > 0 ]]
   then 
     echo "Using user-provided commit message"
     git commit -m "$1"
@@ -59,9 +59,9 @@ then
   alias la='exa --group-directories-first -a'
   alias ls='exa --group-directories-first'
   alias ll='exa --group-directories-first -l'
-  export PATH=$PATH":/Library/Frameworks/Python.framework/Versions/3.7/bin"
-  export PATH=$PATH":$HOME/.cargo/bin"
-  export PATH=$PATH":$HOME/.npm-global/bin"
+  [[ $PATH =~ '/Library/Frameworks/Python.framework/Versions/3.7/bin' ]] || export PATH=$PATH':/Library/Frameworks/Python.framework/Versions/3.7/bin'
+  [[ $PATH =~ "$HOME/.cargo/bin" ]] || export PATH=$PATH":$HOME/.cargo/bin"
+  [[ $PATH =~ "$HOME/.npm-global/bin" ]] || export PATH=$PATH":$HOME/.npm-global/bin"
   export HISTSIZE=99999
   export HISTFILESIZE=99999
   export PROMPT_COMMAND='
@@ -129,5 +129,5 @@ export PAGER='most'
 export BAT_PAGER='less'
 export MOST_INIT="$HOME/.mostrc"
 export EDITOR='vim'
-[[ $PATH =~ ':/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
+[[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
