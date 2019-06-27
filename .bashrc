@@ -12,6 +12,7 @@ caps () {
 }
 
 gitnow () {
+  git pull --quiet
   git add . 
   if [[ $# > 0 ]]
   then 
@@ -27,7 +28,7 @@ gitnow () {
 dtf () {
   git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) add $1 && \
   git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) commit -m "Updating $1" && \
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) push -q
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$(pwd) push --quiet
 }
 
 pw () {
