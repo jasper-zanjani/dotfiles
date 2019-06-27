@@ -53,6 +53,9 @@ then
   export PAGER='less'
   alias firefox='/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
   alias python="winpty python.exe"
+  alias la='ls --group-directories-first --all --color=auto'
+  alias ll='ls --group-directories-first --format=long --color=auto'
+  alias ls='ls --group-directories-first --color=auto'
 fi
 
 ## Special settings for Mac OS X
@@ -94,9 +97,9 @@ then
   alias cfgi3='$EDITOR $HOME/.config/i3/config'
   alias cfgca='$EDITOR $HOME/.config/castero/castero.conf'
   alias cfgqt='$EDITOR $HOME/.config/qtile/config.py'
-  alias la='lsd --group-dirs first --icon-theme=unicode -a'
-  alias ls='lsd --group-dirs first --icon-theme=unicode '
-  alias ll='lsd --group-dirs first --icon-theme=unicode  -l'
+  alias la='lsd --group-dirs-first --icon-theme=unicode -a'
+  alias ls='lsd --group-dirs-first --icon-theme=unicode '
+  alias ll='lsd --group-dirs-first --icon-theme=unicode  -l'
   . yakuake-blurry-bg-fix
   alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
   export PROMPT_COMMAND='
