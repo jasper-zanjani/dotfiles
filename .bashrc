@@ -64,6 +64,7 @@ then
   [[ $PATH =~ "$HOME/.npm-global/bin" ]] || export PATH=$PATH":$HOME/.npm-global/bin"
   export HISTSIZE=99999
   export HISTFILESIZE=99999
+  export BROWSER='open -a /Applications/Firefox.app' # used by Newsboat
   export PROMPT_COMMAND='
     printf "  \e[${COLOR2}m`pwd`\e[90m "
     CONTENTS=$(exa --reverse --sort=modified | tr "\n" " ")
