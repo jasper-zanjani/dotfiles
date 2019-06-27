@@ -127,10 +127,13 @@ alias cfgnbu='$EDITOR $HOME/.config/newsboat/urls'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(shuf -en 1 31 32 33 34 35 36)
+
+export BAT_PAGER='less'
+export BROWSER='firefox'
+export EDITOR='vim'
+export MOST_INIT="$HOME/.mostrc"
 export PS1="\e[${COLOR1}m$ \e[39m"
 export TERM='xterm-256color'
-export BAT_PAGER='less'
-export MOST_INIT="$HOME/.mostrc"
-export EDITOR='vim'
+
 [[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
