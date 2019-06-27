@@ -49,6 +49,7 @@ then
   ## Enable symlink support in MS Windows
   ## see: https://www.joshkel.com/2018/01/18/symlinks-in-windows/
   export MSYS="winsymlinks:nativestrict"
+  export PAGER='less'
   alias firefox='/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
   alias python="winpty python.exe"
 fi
@@ -65,6 +66,7 @@ then
   export HISTSIZE=99999
   export HISTFILESIZE=99999
   export BROWSER='open -a /Applications/Firefox.app' # used by Newsboat
+  export PAGER='most'
   export PROMPT_COMMAND='
     printf "  \e[${COLOR2}m`pwd`\e[90m "
     CONTENTS=$(exa --reverse --sort=modified | tr "\n" " ")
@@ -84,6 +86,7 @@ if [[ $OSTYPE =~ 'linux' ]]
 then
   export HISTSIZE=-1
   export HISTFILESIZE=-1
+  export PAGER='most'
   alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
   alias kl='konsole --profile $(shuf -n1 $HOME/.local/share/konsole/lightprofiles) &> /dev/null &'
   alias cfgpb='$EDITOR $HOME/.config/polybar/default.polybar'
@@ -126,7 +129,6 @@ COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(shuf -en 1 31 32 33 34 35 36)
 export PS1="\e[${COLOR1}m$ \e[39m"
 export TERM='xterm-256color'
-export PAGER='most'
 export BAT_PAGER='less'
 export MOST_INIT="$HOME/.mostrc"
 export EDITOR='vim'
