@@ -22,7 +22,7 @@ gitnow () {
     echo "No commit message, filling in"
     git commit -m "Updating"
   fi
-  git push -q
+  git push --quiet
 }
 
 dtf () {
