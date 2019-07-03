@@ -40,3 +40,5 @@ https://error.show/rss                                    "Linux" "podcast" "Jup
 https://destinationlinux.org/feed/mp3/                    "Linux" "podcast"
 https://s.ch9.ms/Feeds/RSS                                "Microsoft"
 https://devblogs.microsoft.com/commandline/author/crloewenmicrosoft-com/feed/  "Microsoft"
+https://mathieubuisson.github.io/feed.xml                 "Microsoft" "PowerShell"
+https://4sysops.com/feed/                                 "Microsoft" "Linux" "PowerShell"
