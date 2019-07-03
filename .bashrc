@@ -64,6 +64,7 @@ then
   alias la='exa --group-directories-first -a'
   alias ls='exa --group-directories-first'
   alias ll='exa --group-directories-first -l'
+  alias powershell='pwsh'
   [[ $PATH =~ '/Library/Frameworks/Python.framework/Versions/3.7/bin' ]] || export PATH=$PATH':/Library/Frameworks/Python.framework/Versions/3.7/bin'
   [[ $PATH =~ "$HOME/.cargo/bin" ]] || export PATH=$PATH":$HOME/.cargo/bin"
   [[ $PATH =~ "$HOME/.npm-global/bin" ]] || export PATH=$PATH":$HOME/.npm-global/bin"
