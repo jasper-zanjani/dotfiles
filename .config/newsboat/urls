@@ -39,6 +39,7 @@ http://techsnap.systems/rss                               "Linux" "podcast" "Jup
 https://error.show/rss                                    "Linux" "podcast" "Jupiter Broadcasting"
 https://destinationlinux.org/feed/mp3/                    "Linux" "podcast"
 https://s.ch9.ms/Feeds/RSS                                "Microsoft"
-https://devblogs.microsoft.com/commandline/author/crloewenmicrosoft-com/feed/  "Microsoft"
 https://mathieubuisson.github.io/feed.xml                 "Microsoft" "PowerShell"
 https://4sysops.com/feed/                                 "Microsoft" "Linux" "PowerShell"
+https://devblogs.microsoft.com/commandline/feed/          "Microsoft" "Linux" "PowerShell"
+
