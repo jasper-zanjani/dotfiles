@@ -1,5 +1,5 @@
 function zgip {
-  Get-AzPublicIpAddress -Name $args[0] | select IpAddress
+  Get-AzPublicIpAddress -Name $args[0] | select -ExpandProperty IpAddress
 }
 
 nal zicm Invoke-AzVMRunCommand
