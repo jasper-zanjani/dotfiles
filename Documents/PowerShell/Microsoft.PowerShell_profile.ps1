@@ -1,7 +1,7 @@
 function zgip {
-  Get-AzPublicIpAddress -Name $args[0] | select -ExpandProperty IpAddress
+  param ($VMName)
+  Get-AzPublicIpAddress -Name "($VMName)-ip" | select -ExpandProperty IpAddress
 }
 
-nal zicm Invoke-AzVMRunCommand
-nal gcr Get-Credential
-
+New-Alias zicm Invoke-AzVMRunCommand
+New-Alias gcr Get-Credential 
