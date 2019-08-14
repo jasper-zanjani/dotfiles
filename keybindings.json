@@ -1,0 +1,149 @@
+[
+  {
+    "key": "alt+delete",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "-editor.action.startFindReplaceAction"
+  },
+
+// Python
+  {
+    "key": "ctrl+alt+win+p",
+    "command": "python.execInTerminal"
+  },
+  {
+    "key": "ctrl+alt+cmd+p",
+    "command": "python.execInTerminal"
+  },
+
+// Moving focus between panes (Windows)
+  {
+    "key": "ctrl+win+h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "ctrl+win+j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "ctrl+win+k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "ctrl+win+l",
+    "command": "workbench.action.focusRightGroup"
+  },
+
+// Moving focus between panes (OS X)
+  {
+    "key": "ctrl+cmd+h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "ctrl+cmd+j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "ctrl+cmd+k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "ctrl+cmd+l",
+    "command": "workbench.action.focusRightGroup"
+  },
+
+// Moving editors into different panes (Windows)
+  {
+    "key": "ctrl+shift+win+h",
+    "command": "workbench.action.moveActiveEditorGroupLeft"
+  },
+  {
+    "key": "ctrl+shift+win+j",
+    "command": "workbench.action.moveActiveEditorGroupDown"
+  },
+  {
+    "key": "ctrl+shift+win+k",
+    "command": "workbench.action.moveActiveEditorGroupUp"
+  },
+  {
+    "key": "ctrl+shift+win+l",
+    "command": "workbench.action.moveActiveEditorGroupRight"
+  },
+
+// Zen mode
+  {
+    "key": "ctrl+win+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "ctrl+cmd+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+
+// Markdown
+  {
+    "key": "alt+b",
+    "command": "markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+i",
+    "command": "markdown.extension.editing.toggleItalic",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+
+// Status bar
+  {
+    "key": "ctrl+win+g",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  },
+
+// Side bar and activity bar
+  {
+    "key": "ctrl+alt+b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "ctrl+cmd+b",
+    "command": "workbench.action.toggleSideBarVisibility"
+  },
+  {
+    "key": "ctrl+win+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+
+// Integrated terminal
+  {
+    "key": "f12",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+f11",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+f12",
+    "command": "workbench.action.togglePanelPosition"
+  },
+
+// Shell Launcher
+  {
+    "key": "ctrl+cmd+f12",
+    "command": "shellLauncher.launch"
+  },
+  {
+    "key": "ctrl+win+f12",
+    "command": "shellLauncher.launch"
+  },
+]
