@@ -32,16 +32,23 @@ dtf () {
 }
 
 pw () {
-  echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | head -c40 | tr -d "\n" | xargs echo
+  LENGTH="15"
+  [[ "$#" -gt 0 ]] && LENGTH=$1
+  echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | tr -d "\n" | head -c $LENGTH | tr -d "\n" | tee $CLIPBOARD
 }
 
-copy () {
-  if [[ $# < 1 ]]
-  then
-    echo "Usage: copy <file>"
-  else
-    bat $1 | xclip -selection clipboard
-  fi
+kanban () {
+while (( "$#" )); do
+  case "$1" in
+    -w|--wod)
+      OUTPUT="#### Morning WOD\n$(date '+%Y/%m/%d')\n"$(cat "$HOME/kanban/wod")
+      echo -e "$OUTPUT" | tee $CLIPBOARD
+      shift ;;
+    *)
+      echo "Currently only the options -w|--wod are supported"
+      shift ;;
+  esac
+done
 }
 
 ## Special settings for Windows 
@@ -51,6 +58,7 @@ then
   ## see: https://www.joshkel.com/2018/01/18/symlinks-in-windows/
   export MSYS="winsymlinks:nativestrict"
   export PAGER='less'
+  export OS='WIN'
   alias az='/c/Program\ Files\ \(x86\)/Microsoft\ SDKs/Azure/CLI2/wbin/az.cmd'
   alias firefox='/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
   alias python="winpty python.exe"
@@ -82,6 +90,8 @@ then
     else 
       echo $CONTENTS
     fi'
+  export OS='MAC'
+  export CLIPBOARD='pbcopy'
   alias python='python3'
   alias pip='pip3'
 fi
@@ -91,6 +101,8 @@ if [[ $OSTYPE =~ 'linux' ]]
 then
   export HISTSIZE=-1
   export HISTFILESIZE=-1
+  export OS='LX'
+  export CLIPBOARD='xclip -selection clipboard'
   export BROWSER='firefox'
   export PAGER='most'
   alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
