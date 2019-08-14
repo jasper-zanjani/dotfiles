@@ -59,7 +59,6 @@ then
   export MSYS="winsymlinks:nativestrict"
   export PAGER='less'
   export OS='WIN'
-  alias az='/c/Program\ Files\ \(x86\)/Microsoft\ SDKs/Azure/CLI2/wbin/az.cmd'
   alias firefox='/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
   alias python="winpty python.exe"
   alias la='ls --group-directories-first --all --color=auto'
