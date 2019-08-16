@@ -97,12 +97,6 @@
 
 // Status bar
   {
-    "key": "ctrl+win+g",
-    "command": "workbench.action.toggleStatusbarVisibility"
-  },
-
-// Side bar and activity bar
-  {
     "key": "ctrl+alt+b",
     "command": "workbench.action.toggleActivityBarVisibility"
   },
@@ -145,5 +139,59 @@
   {
     "key": "ctrl+win+f12",
     "command": "shellLauncher.launch"
+  },
+  {
+    "key": "f11",
+    "command": "-extension.node-debug.startWithStopOnEntry",
+    "when": "!inDebugMode && debugConfigurationType == 'node'"
+  },
+  {
+    "key": "f11",
+    "command": "-workbench.action.debug.stepInto",
+    "when": "inDebugMode"
+  },
+
+// Side bar and activity bar
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+cmd+f",
+    "command": "-workbench.action.toggleFullScreen"
+  },
+  {
+    "key": "ctrl+cmd+right",
+    "command": "-workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "ctrl+cmd+left",
+    "command": "-workbench.action.moveEditorToPreviousGroup"
+  },
+
+// Git
+  {
+    "key": "ctrl+cmd+g a",
+    "command": "git.stageAll"
+  },
+  {
+    "key": "ctrl+cmd+g c",
+    "command": "git.commitStaged"
+  },
+  {
+    "key": "ctrl+cmd+g p",
+    "command": "git.push"
+  },
+  {
+    "key": "ctrl+cmd+g shift+p",
+    "command": "git.pull"
+  },
+  {
+    "key": "ctrl+cmd+g s",
+    "command": "git.sync"
   },
 ]
