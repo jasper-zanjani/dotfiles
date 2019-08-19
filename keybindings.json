@@ -22,7 +22,7 @@
   { "key": "alt+i",               "command": "markdown.extension.editing.toggleItalic", "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'" },
 
 // Status bar
-  { "key": "ctrl+alt+b",          "command": "workbench.action.toggleActivityBarVisibility" },
+  { "key": "ctrl+shift+a",        "command": "workbench.action.toggleActivityBarVisibility" },
   { "key": "ctrl+shift+t",        "command": "workbench.action.openGlobalKeybindings" },
   { "key": "ctrl+shift+t",        "command": "workbench.action.openGlobalKeybindings" },
 
@@ -59,11 +59,13 @@
   { "key": "ctrl+meta+f",         "command": "-workbench.action.toggleFullScreen" },
   { "key": "ctrl+meta+right",     "command": "-workbench.action.moveEditorToNextGroup" },
   { "key": "ctrl+meta+left",      "command": "-workbench.action.moveEditorToPreviousGroup" },
-  { "key": "shift+cmd+d",         "command": "-workbench.view.debug" },
-  { "key": "shift+cmd+f",         "command": "-workbench.view.search", "when": "!searchViewletVisible" },
-  { "key": "shift+cmd+x",         "command": "-workbench.view.extensions" },
+  { "key": "shift+meta+d",        "command": "-workbench.view.debug" },
+  { "key": "shift+meta+f",        "command": "-workbench.view.search", "when": "!searchViewletVisible" },
+  { "key": "shift+meta+x",        "command": "-workbench.view.extensions" },
   { "key": "ctrl+shift+r",        "command": "-editor.action.refactor", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
   { "key": "ctrl+h",              "command": "-editor.action.startFindReplaceAction" },
   { "key": "f11",                 "command": "-extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && debugConfigurationType == 'node'" },
   { "key": "f11",                 "command": "-workbench.action.debug.stepInto", "when": "inDebugMode" },
+  { "key": "ctrl+meta+b",         "command": "markdown.extension.toc.create" },
+  { "key": "ctrl+meta+;",         "command": "workbench.action.focusPanel" },
 ]
