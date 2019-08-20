@@ -7,8 +7,10 @@
   { "key": "ctrl+meta+j",         "command": "workbench.action.focusBelowGroup" },
   { "key": "ctrl+meta+k",         "command": "workbench.action.focusAboveGroup" },
   { "key": "ctrl+meta+l",         "command": "workbench.action.focusRightGroup" },
+  { "key": "ctrl+meta+;",         "command": "workbench.action.focusFirstEditorGroup", "when": "panelFocus"},
+  { "key": "ctrl+meta+;",         "command": "workbench.action.focusPanel" , "when": "editorFocus"},
 
-// Moving editors into different panes
+// Moving editor groups into different panes
   { "key": "ctrl+shift+meta+h",   "command": "workbench.action.moveActiveEditorGroupLeft" },
   { "key": "ctrl+shift+meta+j",   "command": "workbench.action.moveActiveEditorGroupDown" },
   { "key": "ctrl+shift+meta+k",   "command": "workbench.action.moveActiveEditorGroupUp" },
@@ -20,6 +22,7 @@
 // Markdown
   { "key": "alt+b",               "command": "markdown.extension.editing.toggleBold", "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'" },
   { "key": "alt+i",               "command": "markdown.extension.editing.toggleItalic", "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'" },
+  { "key": "ctrl+meta+b",         "command": "markdown.extension.toc.create" },
 
 // Status bar
   { "key": "ctrl+shift+a",        "command": "workbench.action.toggleActivityBarVisibility" },
@@ -28,13 +31,13 @@
 
 // Integrated terminal
   { "key": "f12",                 "command": "workbench.action.togglePanel" },
-  { "key": "ctrl+f11",            "command": "workbench.action.toggleMaximizedPanel" },
   { "key": "ctrl+f12",            "command": "workbench.action.togglePanelPosition" },
-
-// Shell Launcher
-  { "key": "ctrl+meta+f12",       "command": "shellLauncher.launch" },
-  { "key": "ctrl+meta+f12",       "command": "shellLauncher.launch" },
-
+  { "key": "ctrl+f11",            "command": "workbench.action.toggleMaximizedPanel" },
+  { "key": "ctrl+shift+j",        "command": "cursorPageDown", "when": "editorTextFocus && vim.active"}, 
+  { "key": "ctrl+shift+k",        "command": "cursorPageUp", "when": "editorTextFocus && vim.active"}, 
+  { "key": "ctrl+PageDown",       "command": "workbench.action.nextPanelView", "when": "panelFocus"},
+  { "key": "ctrl+PageUp",         "command": "workbench.action.previousPanelView", "when": "panelFocus"},
+  { "key": "ctrl+meta+f12",       "command": "workbench.action.terminal.selectDefaultShell"},
 // Side bar and activity bar
   { "key": "ctrl+shift+b",        "command": "workbench.action.toggleSidebarVisibility" },
   { "key": "ctrl+shift+e",        "command": "workbench.view.explorer" },
@@ -66,6 +69,8 @@
   { "key": "ctrl+h",              "command": "-editor.action.startFindReplaceAction" },
   { "key": "f11",                 "command": "-extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && debugConfigurationType == 'node'" },
   { "key": "f11",                 "command": "-workbench.action.debug.stepInto", "when": "inDebugMode" },
-  { "key": "ctrl+meta+b",         "command": "markdown.extension.toc.create" },
-  { "key": "ctrl+meta+;",         "command": "workbench.action.focusPanel" },
+  { "key": "alt+s",               "command": "-markdown.extension.editing.toggleStrikethrough", "when": "editorTextFocus && !editorReadonly && !isMac && editorLangId == 'markdown'" },
+  { "key": "ctrl+k",              "command": "-extension.vim_ctrl+k", "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl" },
+  { "key": "ctrl+j",              "command": "-workbench.action.togglePanel" },
+  { "key": "ctrl+j",              "command": "-extension.vim_ctrl+j", "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl" },
 ]
