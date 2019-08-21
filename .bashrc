@@ -42,7 +42,7 @@ while (( "$#" )); do
   case "$1" in
     -w|--wod)
       OUTPUT="#### Morning WOD\n$(date '+%Y/%m/%d')\n"$(cat "$HOME/kanban/wod")
-      echo -e "$OUTPUT" | tee $CLIPBOARD
+      echo -e "$OUTPUT" | tee "$CLIPBOARD"
       shift ;;
     *)
       echo "Currently only the options -w|--wod are supported"
@@ -107,6 +107,7 @@ then
   export CLIPBOARD='xclip -selection clipboard'
   export BROWSER='firefox'
   export PAGER='most'
+  export CODE_KEYBINDING_DIR="$HOME/.config/Code/User"
   alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
   alias kl='konsole --profile $(shuf -n1 $HOME/.local/share/konsole/lightprofiles) &> /dev/null &'
   alias cfgpb='$EDITOR $HOME/.config/polybar/default.polybar'
