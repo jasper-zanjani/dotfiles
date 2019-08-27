@@ -109,6 +109,7 @@ then
   export BROWSER='firefox'
   export PAGER='most'
   export CODE_KEYBINDING_DIR="$HOME/.config/Code/User"
+  export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1           # PowerShell Core support 
   alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
   alias kl='konsole --profile $(shuf -n1 $HOME/.local/share/konsole/lightprofiles) &> /dev/null &'
   alias cfgpb='$EDITOR $HOME/.config/polybar/default.polybar'
