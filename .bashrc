@@ -120,16 +120,16 @@ then
   alias ll='lsd --group-dirs --icon-theme=unicode  -l'
   . yakuake-blurry-bg-fix
   alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
-  export PROMPT_COMMAND='
-    printf "  \e[${COLOR2}m`pwd`\e[90m "
-    CONTENTS=$(lsd --timesort | tr "\n" " ")
-    if [ ${#CONTENTS} -gt $COLUMNS ]
-    then
-      echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
-      echo " ..."
-    else 
-      echo $CONTENTS
-    fi'
+  # export PROMPT_COMMAND='
+  # printf "  \e[${COLOR2}m`pwd`\e[90m "
+  # CONTENTS=$(lsd --timesort | tr "\n" " ")
+  # if [ ${#CONTENTS} -gt $COLUMNS ]
+  # then
+  #   echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
+  #   echo " ..."
+  # else 
+  #   echo $CONTENTS
+  # fi'
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
