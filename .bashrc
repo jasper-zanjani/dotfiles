@@ -118,8 +118,8 @@ then
   alias la='lsd --group-dirs --icon-theme=unicode -a'
   alias ls='lsd --group-dirs --icon-theme=unicode '
   alias ll='lsd --group-dirs --icon-theme=unicode  -l'
-  . yakuake-blurry-bg-fix
   alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
+  alias az='azure-cli'
   export PROMPT_COMMAND='
     printf "  \e[${COLOR2}m`pwd`\e[90m "
     CONTENTS=$(lsd --timesort | tr "\n" " ")
