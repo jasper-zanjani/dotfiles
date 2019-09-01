@@ -34,7 +34,8 @@ dtf () {
 pw () {
   LENGTH="15"
   [[ "$#" -gt 0 ]] && LENGTH=$1
-  echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | tr -d "\n" | head -c $LENGTH | tr -d "\n" | tee $CLIPBOARD
+  # echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | tr -d "\n" | head -c $LENGTH | tr -d "\n" | tee $CLIPBOARD
+  openssl rand -base64 48 | cut -c1-$LENGTH
 }
 
 kanban () {
@@ -120,16 +121,21 @@ then
   alias ll='lsd --group-dirs --icon-theme=unicode  -l'
   alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
   alias az='azure-cli'
-  export PROMPT_COMMAND='
-    printf "  \e[${COLOR2}m`pwd`\e[90m "
-    CONTENTS=$(lsd --timesort | tr "\n" " ")
-    if [ ${#CONTENTS} -gt $COLUMNS ]
-    then
-      echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
-      echo " ..."
-    else 
-      echo $CONTENTS
-    fi'
+  # export PROMPT_COMMAND='
+  # printf "  \e[${COLOR2}m`pwd`\e[90m "
+  # CONTENTS=$(lsd --timesort | tr "\n" " ")
+  # if [ ${#CONTENTS} -gt $COLUMNS ]
+  # then
+  #   echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
+  #   echo " ..."
+  # else 
+  #   echo $CONTENTS
+  # fi'
+  # Yakuake background transparency fix
+  if [[ $(ps --no-header -p $PPID -o comm) =~ ^yakuake$ ]]; then
+          for wid in $(xdotool search --pid $PPID); do
+              xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+  fi
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
