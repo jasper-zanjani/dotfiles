@@ -31,6 +31,12 @@ dtf () {
   git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME push --quiet
 }
 
+hex () {
+  LENGTH="6"
+  [[ "$#" -gt 0 ]] && LENGTH=$1
+  echo 'abcdef1234567890' | fold -w1 | shuf -r | tr -d "\n" | head -c $LENGTH | tr -d "\n" | tee $CLIPBOARD
+}
+
 pw () {
   LENGTH="15"
   [[ "$#" -gt 0 ]] && LENGTH=$1
