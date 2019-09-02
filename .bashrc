@@ -40,8 +40,7 @@ hex () {
 pw () {
   LENGTH="15"
   [[ "$#" -gt 0 ]] && LENGTH=$1
-  # echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | tr -d "\n" | head -c $LENGTH | tr -d "\n" | tee $CLIPBOARD
-  openssl rand -base64 48 | cut -c1-$LENGTH
+  echo 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%^&*()_-+=[]{}:;,.<>' | fold -w1 | shuf -r | tr -d "\n" | head -c $LENGTH | tr -d "\n" | tee $CLIPBOARD
 }
 
 kanban () {
@@ -126,27 +125,23 @@ then
   alias ls='lsd --group-dirs --icon-theme=unicode '
   alias ll='lsd --group-dirs --icon-theme=unicode  -l'
   alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
+  alias az='azure-cli'
   # export PROMPT_COMMAND='
-  # printf "  \e[${COLOR2}m`pwd`\e[90m "
-  # CONTENTS=$(lsd --timesort | tr "\n" " ")
-  # if [ ${#CONTENTS} -gt $COLUMNS ]
-  # then
-  #   echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
-  #   echo " ..."
-  # else 
-  #   echo $CONTENTS
-  # fi'
-  # Yakuake background transparency fix
-  if [[ $(ps --no-header -p $PPID -o comm) =~ ^yakuake$ ]]; then
-          for wid in $(xdotool search --pid $PPID); do
-              xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
-  fi
+  #   printf "  \e[${COLOR2}m`pwd`\e[90m "
+  #   CONTENTS=$(lsd --timesort | tr "\n" " ")
+  #   if [ ${#CONTENTS} -gt $COLUMNS ]
+  #   then
+  #     echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
+  #     echo " ..."
+  #   else 
+  #     echo $CONTENTS
+  #   fi'
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
 alias df='df -h'        # human-readable sizes
 alias free='free -m'    # show sizes in MB
-alias dotfile='git --git-dir=$HOME/dotfiles/.git --work-tree=$PWD'
+alias dotfile='git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto -d recurse'
@@ -163,7 +158,7 @@ COLOR2=$(shuf -en 1 31 32 33 34 35 36)
 
 export BAT_PAGER='less'
 export EDITOR='vim'
-export MOST_INIT="$HOME/.mostrc"
+export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
 export PS1="\e[${COLOR1}m$ \e[39m"
 export TERM='xterm-256color'
 

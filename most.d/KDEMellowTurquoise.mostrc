@@ -1,0 +1,12 @@
+unsetkey "j"
+setkey "down" "j"
+setkey "up" "k"
+
+% Interpretation of color definitions on man pages
+%  - overstrike  Headings
+%  - underline   Variable placeholders
+
+color overstrike  color42 default
+color underline   color42 default 
+color normal      default default
+color status      black color42
