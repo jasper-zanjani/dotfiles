@@ -130,6 +130,7 @@ alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto -d recurse'
 alias np='nano -w PKGBUILD'
 alias more='less'
+alias newsboat='newsboat --quiet --refresh-on-start'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(($COLOR1-60))
