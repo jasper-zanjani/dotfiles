@@ -115,10 +115,10 @@ then
   export OS='LX'
   export PAGER='most'
   alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
-  alias la='lsd --group-dirs --icon-theme=unicode -a'
-  alias ls='lsd --group-dirs --icon-theme=unicode '
-  alias ll='lsd --group-dirs --icon-theme=unicode  -l'
-  alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
+  alias la='lsd --group-dirs=first --icon-theme=unicode -a'
+  alias ls='lsd --group-dirs=first --icon-theme=unicode '
+  alias ll='lsd --group-dirs=first --icon-theme=unicode  -l'
+  alias lla='lsd --group-dirs=first --icon-theme=unicode  -la'
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
