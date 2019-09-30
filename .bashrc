@@ -130,7 +130,6 @@ alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto -d recurse'
 alias np='nano -w PKGBUILD'
 alias more='less'
-alias newsboat='newsboat --quiet --refresh-on-start'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(($COLOR1-60))
@@ -144,7 +143,6 @@ export TERM='xterm-256color'
 
 [[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
-[[ $BG -gt 0 ]] && alias bat='bat --theme=OneHalfLight'
 
 
 ## Old PROMPT_COMMAND, kept for posterity
@@ -158,9 +156,3 @@ export TERM='xterm-256color'
 #   else 
 #     echo $CONTENTS
 #   fi'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/src/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/src/google-cloud-sdk/path.bash.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/src/google-cloud-sdk/completion.bash.inc"; fi
