@@ -38,12 +38,6 @@ pw () {
   openssl rand -base64 48 | cut -c1-$LENGTH
 }
 
-hex () {
-  LENGTH=15
-  [[ "$#" -gt 0 ]] && LENGTH=$1
-  echo 'abcdef1234567890' | fold -w1 | shuf -r | tr -d "\n" | head -c $LENGTH | tr -d "\n" | tee $CLIPBOARD
-}
-
 kanban () {
 while (( "$#" )); do
   case "$1" in
@@ -121,10 +115,10 @@ then
   export OS='LX'
   export PAGER='most'
   alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
-  alias la='lsd --group-dirs --icon-theme=unicode -a'
-  alias ls='lsd --group-dirs --icon-theme=unicode '
-  alias ll='lsd --group-dirs --icon-theme=unicode  -l'
-  alias lla='lsd --group-dirs first --icon-theme=unicode  -la'
+  alias la='lsd --group-dirs=first --icon-theme=unicode -a'
+  alias ls='lsd --group-dirs=first --icon-theme=unicode '
+  alias ll='lsd --group-dirs=first --icon-theme=unicode  -l'
+  alias lla='lsd --group-dirs=first --icon-theme=unicode  -la'
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
@@ -133,7 +127,7 @@ alias free='free -m'    # show sizes in MB
 alias dotfile='git --git-dir=$HOME/dotfiles/.git --work-tree=$PWD'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
-alias grep='grep --color=auto -d recurse'
+alias grep='grep --color=auto --directories=recurse'
 alias np='nano -w PKGBUILD'
 alias more='less'
 alias newsboat='newsboat --quiet --refresh-on-start'
@@ -150,7 +144,6 @@ export TERM='xterm-256color'
 
 [[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
-[[ $LIGHTBG -gt 0 ]] && alias bat='bat --theme=OneHalfLight'
 
 
 ## Old PROMPT_COMMAND, kept for posterity
@@ -164,9 +157,3 @@ export TERM='xterm-256color'
 #   else 
 #     echo $CONTENTS
 #   fi'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/src/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/src/google-cloud-sdk/path.bash.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/src/google-cloud-sdk/completion.bash.inc"; fi
