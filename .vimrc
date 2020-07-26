@@ -15,10 +15,17 @@ set relativenumber
 set laststatus=2
 set noshowmode
 set nowrap
+set termguicolors
+
+colorscheme embark
+let g:airline_theme = 'embark'
+
 syntax on
 map <C-o> :NERDTreeToggle<CR>
-let g:limelight_conceal_ctermfg = 'darkgray'
-" :colo KDEPlasmaTurquoise
+
+" let g:airline#extensions#tabline#enabled = 1
+
+" let g:limelight_conceal_ctermfg = 'darkgray'
 
 " Mapping <Alt-j> and <Alt-k> to move lines of text up or down
 " For some reason, coming out of insert mode with <Esc> then pressing j or k 
