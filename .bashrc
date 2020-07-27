@@ -8,7 +8,7 @@
 # Y8P  `Y8bod8P' `Y888""8o 8""888P' o888o o888o d888b    `Y8bod8P' 
 
 dtf () {
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME add $1 && \
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME add $* && \
   git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME commit -m "Updating $1" && \
   git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME push --quiet
 }

@@ -16,6 +16,8 @@ set laststatus=2
 set noshowmode
 set nowrap
 set termguicolors
+set splitbelow
+set splitright
 
 colorscheme embark
 let g:airline_theme = 'embark'
@@ -49,11 +51,7 @@ vmap [3;2~ dd
 " Semicolon press initiates command line, rather than colon
 nmap ; :
 
-
-" Once **upon** a midnight dreary
-" While I pondered weak and weary
-
-" In normal mode, this appears to interfere with Bash's <C-w> meaning delete previous word
-map <C-w> :w<CR>
-map <C-x> :x<CR>
-nmap <S-k> I<Return><Esc>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k 
