@@ -18,16 +18,15 @@ set nowrap
 set termguicolors
 set splitbelow
 set splitright
-
-colorscheme embark
-let g:airline_theme = 'embark'
-
+set termguicolors
 syntax on
-map <C-o> :NERDTreeToggle<CR>
+colorscheme ubuntu
 
+let g:airline_theme = 'embark'
 " let g:airline#extensions#tabline#enabled = 1
-
 " let g:limelight_conceal_ctermfg = 'darkgray'
+
+map <C-o> :NERDTreeToggle<CR>
 
 " Mapping <Alt-j> and <Alt-k> to move lines of text up or down
 " For some reason, coming out of insert mode with <Esc> then pressing j or k 
@@ -55,3 +54,4 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k 
+
