@@ -1,8 +1,10 @@
+set colorcolumn=120
+
 hi Comment      guibg=NONE    guifg=#851c63
 hi LineNr       guibg=NONE    guifg=#5b1344
 hi NonText                    guifg=#5b1344
-hi TabLine      guibg=#5b1344 guifg=#851c63
-hi TabLineFill  guibg=NONE    guifg=#5b1344
+hi TabLine      guibg=#5b1344 guifg=#851c63 ctermfg=DarkGrey
+hi TabLineFill  guibg=NONE    guifg=#5b1344 ctermfg=DarkGrey
 hi Visual       guibg=#5b1344 guifg=NONE
 
 " Have to research what exactly the `gui`, `cterm`, and `term`
@@ -18,6 +20,8 @@ hi      StatusLineNC      guibg=#5b1344 guifg=#851c63 cterm=NONE
 hi      Directory                  guifg=#851c63
 hi      htmlBold          guifg=Yellow
 
+hi link ColorColumn       TabLineFill
+hi      SpecialKey        ctermfg=Cyan guifg=Cyan
 " Markdown-specific highlights
 hi      Title             guifg=Magenta ctermfg=Magenta
 " mkdHeading marks the series of hashmarks before headers. Headers themselves are marked as htmlH1, htmlH2...
