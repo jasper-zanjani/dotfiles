@@ -52,7 +52,8 @@ then
   export HISTSIZE=99999
   export HISTFILESIZE=99999
   export BROWSER='open -a /Applications/Firefox.app' # used by Newsboat
-  export PAGER='most'
+  export PAGER='less'
+  [[ -x /usr/bin/most ]] && export PAGER='most'
   export OS='MAC'
   #   CONTENTS=$(exa --reverse --sort=modified | tr "\n" " ")
   #   if [ ${#CONTENTS} -gt $COLUMNS ]
