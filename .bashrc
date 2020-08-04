@@ -7,8 +7,26 @@
 # .o.  888   888 d8(  888  o.  )88b  888   888   888     888   .o8 
 # Y8P  `Y8bod8P' `Y888""8o 8""888P' o888o o888o d888b    `Y8bod8P' 
 
+caps () {
+  xmodmap $HOME/.caps-esc-swap
+}
+
+gitnow () {
+  git pull --quiet
+  git add . 
+  if [[ $# > 0 ]]
+  then 
+    echo "Using user-provided commit message"
+    git commit -m "$1"
+  else
+    echo "No commit message, filling in"
+    git commit -m "Updating"
+  fi
+  git push --quiet
+}
+
 dtf () {
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME add $* && \
+  git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME add $1 && \
   git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME commit -m "Updating $1" && \
   git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME push --quiet
 }
@@ -20,12 +38,26 @@ pw () {
   openssl rand -base64 48 | cut -c1-$LENGTH
 }
 
-# prompt () {
-#   export COLOR1=$(shuf -en 1 91 92 93 94 95 96)
-#   export COLOR2=$(($COLOR1-60))
-#   export PROMPT_COMMAND='printf "\e[90m[ \e[${COLOR2}m`pwd`\e[90m ]"'
-#   export PS1=" \e[${COLOR1}m$ \e[39m"
-# }
+kanban () {
+while (( "$#" )); do
+  case "$1" in
+    -w|--wod)
+      OUTPUT="#### Morning WOD\n$(date '+%Y/%m/%d')\n"$(cat "$HOME/kanban/wod")
+      echo -e "$OUTPUT" | tee "$CLIPBOARD"
+      shift ;;
+    *)
+      echo "Currently only the options -w|--wod are supported"
+      shift ;;
+  esac
+done
+}
+
+prompt () {
+  export COLOR1=$(shuf -en 1 91 92 93 94 95 96)
+  export COLOR2=$(($COLOR1-60))
+  export PROMPT_COMMAND='printf "\e[90m[ \e[${COLOR2}m`pwd`\e[90m ]"'
+  export PS1=" \e[${COLOR1}m$ \e[39m"
+}
 
 ## Special settings for Windows 
 if [[ $OSTYPE =~ 'msys'|'cygwin' ]]
@@ -106,10 +138,22 @@ COLOR2=$(($COLOR1-60))
 export BAT_PAGER='less'
 export EDITOR='vim'
 export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
-# export PROMPT_COMMAND='printf "\e[90m[ \e[${COLOR2}m`pwd`\e[90m ]"'
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+export PROMPT_COMMAND='printf "\e[90m[ \e[${COLOR2}m`pwd`\e[90m ]"'
+export PS1=" \e[${COLOR1}m$ \e[39m"
 export TERM='xterm-256color'
 
 [[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
 
+
+## Old PROMPT_COMMAND, kept for posterity
+# export PROMPT_COMMAND='
+#   printf "  \e[${COLOR2}m`pwd`\e[90m "
+#   CONTENTS=$(lsd --timesort | tr "\n" " ")
+#   if [ ${#CONTENTS} -gt $COLUMNS ]
+#   then
+#     echo -n $CONTENTS | head -c $(expr $COLUMNS "-" $(pwd | wc -m) "-" 6)
+#     echo " ..."
+#   else 
+#     echo $CONTENTS
+#   fi'

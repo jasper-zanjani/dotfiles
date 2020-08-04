@@ -15,29 +15,29 @@ set nowrap
 set termguicolors
 set splitbelow splitright
 syntax on
-colorscheme ubuntu
+colorscheme embark
 
 let g:airline_theme = 'embark'
 " let g:airline#extensions#tabline#enabled = 1
-" let g:limelight_conceal_ctermfg = 'darkgray'
+let g:limelight_conceal_ctermfg = 'darkgray'
 
 map <C-o> :NERDTreeToggle<CR>
 
 " Mapping <Alt-j> and <Alt-k> to move lines of text up or down
-" For some reason, coming out of insert mode with <Esc> then pressing j or k 
-" appears to trigger this keybinding as well
-" It appears the keycode produced by Alt is equivalent to pressing Escape
-" -> https://vim.fandom.com/wiki/Avoid_the_escape_key
-
-nmap <silent> H :m .-2<CR>==
-nmap <silent> L :m .+1<CR>==
-nmap <silent> K o<Esc>k 
+nnoremap <A-j> :m .+1<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Mapping <Alt-b> to surround selection with double asterisks
 " `vnoremap` will produce the literal character sequence 'S*gvS*'
-vmap b S*gvS*
-nmap b viWS*gvS*
-imap b <Esc>viWS*gvS*gi
+" It appears the keycode produced by Alt is equivalent to pressing Escape
+" -> https://vim.fandom.com/wiki/Avoid_the_escape_key
+" vmap b S*gvS*
+" nmap b viWS*gvS*
+" imap b <Esc>viWS*gvS*gi
 
 " Shift-Del deletes line
 vmap [3;2~ dd
