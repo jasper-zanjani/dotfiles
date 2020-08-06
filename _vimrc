@@ -14,6 +14,8 @@ set noshowmode
 set nowrap
 set termguicolors
 set splitbelow splitright
+
+set backspace=indent,eol,start
 syntax on
 
 
@@ -50,7 +52,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k 
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/vimfiles/plugged')
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'skbolton/embark'
