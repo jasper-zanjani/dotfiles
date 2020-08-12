@@ -16,6 +16,7 @@ set termguicolors
 set splitbelow splitright
 syntax on
 
+colorscheme ubuntu
 
 let g:airline_theme = 'embark'
 " let g:airline#extensions#tabline#enabled = 1
@@ -58,5 +59,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'pprovost/vim-ps1'
+Plug 'SirVer/ultisnips'
 
 call plug#end()

@@ -83,10 +83,21 @@ then
   export OS='LX'
   export PAGER=less
   alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
-  alias la='lsd --group-dirs=first --icon-theme=unicode -a'
-  alias ls='lsd --group-dirs=first --icon-theme=unicode '
-  alias ll='lsd --group-dirs=first --icon-theme=unicode  -l'
-  alias lla='lsd --group-dirs=first --icon-theme=unicode  -la'
+  if [[ -x /usr/bin/lsd ]]
+  then
+    alias la='lsd --group-dirs=first --icon-theme=unicode -a'
+    alias ls='lsd --group-dirs=first --icon-theme=unicode '
+    alias ll='lsd --group-dirs=first --icon-theme=unicode  -l'
+    alias lla='lsd --group-dirs=first --icon-theme=unicode  -la'
+  else
+    alias la='ls --group-directories-first --all --color=auto'
+    alias ll='ls --group-directories-first --format=long --color=auto'
+    alias ls='ls --group-directories-first --color=auto'
+  fi
+  if [[ $WSL_DISTRO_NAME == Ubuntu ]]
+  then 
+    alias python='python3'
+  fi
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
