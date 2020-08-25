@@ -8,9 +8,22 @@
 # Y8P  `Y8bod8P' `Y888""8o 8""888P' o888o o888o d888b    `Y8bod8P' 
 
 dtf () {
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME add $* && \
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME commit -m "Updating $1" && \
-  git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME push --quiet
+  if [[ (-d $DOTFILES) || (-d $HOME/dotfiles) ]]; then
+    if [[ -d $DOTFILES ]]; then
+      if [[ $DOTFILES =~ '.git' ]]; then WORKING_DIRECTORY=$DOTFILES
+      elif [[ -d "$DOTFILES/.git" ]]; then WORKING_DIRECTORY="$DOTFILES/.git"
+      fi
+    elif [[ -d $HOME/dotfiles/.git ]]; then
+      WORKING_DIRECTORY="$HOME/dotfiles/.git"
+    fi
+    git --git-dir=$WORKING_DIRECTORY --work-tree=$HOME add $* && \
+    read -e  -p "Enter commit message: " -i ":black_nib:" COMMIT_MESSAGE && \
+    git --git-dir=$WORKING_DIRECTORY --work-tree=$HOME commit -m "$COMMIT_MESSAGE" && \
+    git --git-dir=$WORKING_DIRECTORY --work-tree=$HOME push --quiet
+  else
+    echo "You must specify a dotfiles directory at \$DOTFILES, or place it at \$HOME/dotfiles"
+  fi
+
 }
 
 pw () {
@@ -103,7 +116,6 @@ fi
 alias cp="cp -i"        # confirm before overwriting something
 alias df='df -h'        # human-readable sizes
 alias free='free -m'    # show sizes in MB
-alias dotfile='git --git-dir=$HOME/dotfiles/.git --work-tree=$PWD'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --color=auto --directories=recurse'
@@ -120,6 +132,7 @@ export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
 # export PROMPT_COMMAND='printf "\e[90m[ \e[${COLOR2}m`pwd`\e[90m ]"'
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export TERM='xterm-256color'
+export DOTFILES="$HOME/GitHub/dotfiles/.git"
 
 [[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
