@@ -60,5 +60,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'pprovost/vim-ps1'
 Plug 'SirVer/ultisnips'
+Plug 'wadackel/vim-dogrun'
 
 call plug#end()
+
+
