@@ -78,8 +78,6 @@ then
   alias la='exa --group-directories-first -a'
   alias ls='exa --group-directories-first'
   alias ll='exa --group-directories-first -l'
-  alias python='python3'
-  alias pip='pip3'
   [[ $PATH =~ '/Library/Frameworks/Python.framework/Versions/3.7/bin' ]] || export PATH=$PATH':/Library/Frameworks/Python.framework/Versions/3.7/bin'
   [[ $PATH =~ "$HOME/.cargo/bin" ]] || export PATH=$PATH":$HOME/.cargo/bin"
   [[ $PATH =~ "$HOME/.npm-global/bin" ]] || export PATH=$PATH":$HOME/.npm-global/bin"
@@ -109,7 +107,7 @@ then
   fi
   if [[ $WSL_DISTRO_NAME == Ubuntu ]]
   then 
-    alias python='python3'
+    # alias python='python3'
   fi
 fi
 
@@ -122,6 +120,8 @@ alias grep='grep --color=auto --directories=recurse'
 alias np='nano -w PKGBUILD'
 alias more='less'
 alias newsboat='newsboat --quiet --refresh-on-start'
+alias python='python3'
+alias pip='pip3'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(($COLOR1-60))
@@ -129,7 +129,6 @@ COLOR2=$(($COLOR1-60))
 export BAT_PAGER='less'
 export EDITOR='vim'
 export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
-# export PROMPT_COMMAND='printf "\e[90m[ \e[${COLOR2}m`pwd`\e[90m ]"'
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export TERM='xterm-256color'
 export DOTFILES="$HOME/GitHub/dotfiles/.git"
