@@ -14,9 +14,10 @@ set noshowmode
 set nowrap
 set termguicolors
 set splitbelow splitright
+set noswapfile
 syntax on
 
-colorscheme ubuntu
+" colorscheme ubuntu
 
 let g:airline_theme = 'embark'
 " let g:airline#extensions#tabline#enabled = 1
@@ -64,4 +65,5 @@ Plug 'wadackel/vim-dogrun'
 
 call plug#end()
 
+colorscheme dogrun
 
