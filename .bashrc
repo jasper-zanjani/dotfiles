@@ -93,7 +93,8 @@ then
   export HISTSIZE=-1
   export OS='LX'
   export PAGER=less
-  alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
+  [[ -e /usr/bin/konsole ]] && alias k='konsole --profile $(shuf -n1 -e $(ls $HOME/.local/share/konsole *.profile)) &> /dev/null &'
+  alias clip='xclip -selection clipboard -i'
   if [[ -x /usr/bin/lsd ]]
   then
     alias la='lsd --group-dirs=first --icon-theme=unicode -a'
