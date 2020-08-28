@@ -106,10 +106,6 @@ then
     alias ll='ls --group-directories-first --format=long --color=auto'
     alias ls='ls --group-directories-first --color=auto'
   fi
-  if [[ $WSL_DISTRO_NAME == Ubuntu ]]
-  then 
-    # alias python='python3'
-  fi
 fi
 
 alias cp="cp -i"        # confirm before overwriting something
@@ -123,6 +119,8 @@ alias more='less'
 alias newsboat='newsboat --quiet --refresh-on-start'
 alias python='python3'
 alias pip='pip3'
+alias ..='cd .. && ls'
+alias ...='cd ../.. && ls'
 
 COLOR1=$(shuf -en 1 91 92 93 94 95 96)
 COLOR2=$(($COLOR1-60))
