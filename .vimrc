@@ -15,6 +15,7 @@ set nowrap
 set termguicolors
 set splitbelow splitright
 set noswapfile
+set foldlevel=4
 syntax on
 
 " colorscheme ubuntu
