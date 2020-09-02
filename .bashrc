@@ -135,3 +135,4 @@ export DOTFILES="$HOME/GitHub/dotfiles/.git"
 [[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
 
+[[ -e $HOME/caps-esc-swap.xmodmap ]] && xmodmap $HOME/caps-esc-swap.xmodmap
