@@ -1,0 +1,154 @@
+[ 
+// Python
+  { "key": "ctrl+alt+meta+p",     "command": "python.execInTerminal" },
+
+// Moving focus between panes
+  { "key": "ctrl+meta+h",         "command": "workbench.action.focusLeftGroup" },
+  { "key": "ctrl+meta+j",         "command": "workbench.action.focusBelowGroup" },
+  { "key": "ctrl+meta+k",         "command": "workbench.action.focusAboveGroup" },
+  { "key": "ctrl+meta+l",         "command": "workbench.action.focusRightGroup" },
+  { "key": "ctrl+meta+;",         "command": "workbench.action.focusFirstEditorGroup", "when": "panelFocus"},
+  { "key": "ctrl+meta+;",         "command": "workbench.action.focusPanel" , "when": "editorFocus"},
+
+// Moving editor groups into different panes
+  { "key": "ctrl+shift+meta+h",   "command": "workbench.action.moveActiveEditorGroupLeft" },
+  { "key": "ctrl+shift+meta+j",   "command": "workbench.action.moveActiveEditorGroupDown" },
+  { "key": "ctrl+shift+meta+k",   "command": "workbench.action.moveActiveEditorGroupUp" },
+  { "key": "ctrl+shift+meta+l",   "command": "workbench.action.moveActiveEditorGroupRight" },
+
+// Zen mode
+  { "key": "ctrl+meta+z",         "command": "workbench.action.toggleZenMode" },
+
+// Markdown
+  { "key": "ctrl+b",               "command": "markdown.extension.editing.toggleBold", "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'" },
+  { "key": "alt+i",               "command": "markdown.extension.editing.toggleItalic", "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'" },
+  { "key": "ctrl+meta+b",         "command": "markdown.extension.toc.create" },
+
+// Status bar
+  { "key": "ctrl+shift+a",        "command": "workbench.action.toggleActivityBarVisibility" },
+  { "key": "ctrl+shift+t",        "command": "workbench.action.openGlobalKeybindings" },
+  { "key": "ctrl+shift+t",        "command": "workbench.action.openGlobalKeybindings" },
+
+// Integrated terminal
+  { "key": "f12",                 "command": "workbench.action.togglePanel" },
+  { "key": "ctrl+f12",            "command": "workbench.action.togglePanelPosition" },
+  { "key": "ctrl+f11",            "command": "workbench.action.toggleMaximizedPanel" },
+  { "key": "ctrl+shift+j",        "command": "cursorPageDown", "when": "editorTextFocus && vim.active"}, 
+  { "key": "ctrl+shift+k",        "command": "cursorPageUp", "when": "editorTextFocus && vim.active"}, 
+  { "key": "ctrl+PageDown",       "command": "workbench.action.nextPanelView", "when": "panelFocus"},
+  { "key": "ctrl+PageUp",         "command": "workbench.action.previousPanelView", "when": "panelFocus"},
+  { "key": "ctrl+meta+f12",       "command": "workbench.action.terminal.selectDefaultShell"},
+// Side bar and activity bar
+  { "key": "ctrl+shift+b",        "command": "workbench.action.toggleSidebarVisibility" },
+  { "key": "ctrl+shift+e",        "command": "workbench.view.explorer" },
+  { "key": "ctrl+shift+x",        "command": "workbench.view.extensions" },
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.view.debug"
+  },
+
+// Git
+  { "key": "ctrl+meta+g a",       "command": "git.stageAll" },
+  { "key": "ctrl+meta+g c",       "command": "git.commitStaged" },
+  { "key": "ctrl+meta+g p",       "command": "git.push" },
+  { "key": "ctrl+meta+g shift+p", "command": "git.pull" },
+  { "key": "ctrl+meta+g s",       "command": "git.sync" },
+
+// Etc
+  { "key": "alt+delete",          "command": "editor.action.deleteLines", "when": "textInputFocus && !editorReadonly" },
+
+// Removing default keybindings
+  { "key": "ctrl+shift+b",        "command": "-workbench.action.tasks.build" },
+  { "key": "shift+meta+e",        "command": "-workbench.view.explorer" },
+  { "key": "ctrl+b",              "command": "-workbench.action.toggleSidebarVisibility" },
+  { "key": "ctrl+meta+f",         "command": "-workbench.action.toggleFullScreen" },
+  { "key": "ctrl+meta+right",     "command": "-workbench.action.moveEditorToNextGroup" },
+  { "key": "ctrl+meta+left",      "command": "-workbench.action.moveEditorToPreviousGroup" },
+  { "key": "shift+meta+d",        "command": "-workbench.view.debug" },
+  { "key": "shift+meta+f",        "command": "-workbench.view.search", "when": "!searchViewletVisible" },
+  { "key": "shift+meta+x",        "command": "-workbench.view.extensions" },
+  { "key": "ctrl+shift+r",        "command": "-editor.action.refactor", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
+  { "key": "ctrl+h",              "command": "-editor.action.startFindReplaceAction" },
+  { "key": "f11",                 "command": "-extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && debugConfigurationType == 'node'" },
+  { "key": "f11",                 "command": "-workbench.action.debug.stepInto", "when": "inDebugMode" },
+  { "key": "alt+s",               "command": "-markdown.extension.editing.toggleStrikethrough", "when": "editorTextFocus && !editorReadonly && !isMac && editorLangId == 'markdown'" },
+  { "key": "ctrl+k",              "command": "-extension.vim_ctrl+k", "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl" },
+  { "key": "ctrl+j",              "command": "-workbench.action.togglePanel" },
+  {
+    "key": "ctrl+j",
+    "command": "-extension.vim_ctrl+j",
+    "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "-workbench.action.replaceInFiles"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.view.search",
+    "when": "!searchViewletVisible"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "actions.find"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-actions.find"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.view.search"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-extension.vim_ctrl+w",
+    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+shift+/",
+    "command": "markdown.extension.editing.toggleCodeBlock"
+  },
+  {
+    "key": "f9",
+    "command": "-sortLines.sortLines",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f9",
+    "command": "-editor.debug.action.toggleBreakpoint",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f9",
+    "command": "sortLines.sortLinesNatural"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.zoomReset"
+  },
+  {
+    "key": "ctrl+numpad0",
+    "command": "-workbench.action.zoomReset"
+  },
+]
