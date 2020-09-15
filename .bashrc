@@ -8,18 +8,18 @@
 # Y8P  `Y8bod8P' `Y888""8o 8""888P' o888o o888o d888b    `Y8bod8P' 
 
 dtf () {
-  if [[ (-d $DOTFILES) || (-d $HOME/dotfiles) ]]; then
+  if [[ (-d $DOTFILES) || (-d $HOME/github/dotfiles) ]]; then
     if [[ -d $DOTFILES ]]; then
-      if [[ $DOTFILES =~ '.git' ]]; then WORKING_DIRECTORY=$DOTFILES
-      elif [[ -d "$DOTFILES/.git" ]]; then WORKING_DIRECTORY="$DOTFILES/.git"
+      if [[ $DOTFILES =~ '.git' ]]; then GIT_DIR=$DOTFILES
+      elif [[ -d "$DOTFILES/.git" ]]; then GIT_DIR="$DOTFILES/.git"
       fi
     elif [[ -d $HOME/dotfiles/.git ]]; then
-      WORKING_DIRECTORY="$HOME/dotfiles/.git"
+      GIT_DIR="$HOME/dotfiles/.git"
     fi
-    git --git-dir=$WORKING_DIRECTORY --work-tree=$HOME add $* && \
+    git --git-dir=$GIT_DIR --work-tree=$HOME add $* && \
     read -e  -p "Enter commit message: " -i ":black_nib:" COMMIT_MESSAGE && \
-    git --git-dir=$WORKING_DIRECTORY --work-tree=$HOME commit -m "$COMMIT_MESSAGE" && \
-    git --git-dir=$WORKING_DIRECTORY --work-tree=$HOME push --quiet
+    git --git-dir=$GIT_DIR --work-tree=$HOME commit -m "$COMMIT_MESSAGE" && \
+    git --git-dir=$GIT_DIR --work-tree=$HOME push --quiet
   else
     echo "You must specify a dotfiles directory at \$DOTFILES, or place it at \$HOME/dotfiles"
   fi
@@ -131,7 +131,8 @@ export EDITOR='vim'
 export MOST_INITFILE="$HOME/most.d/KDEMellowTurquoise.mostrc"
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export TERM='xterm-256color'
-export DOTFILES="$HOME/GitHub/dotfiles/.git"
+export DOTFILES="$HOME/github/dotfiles/.git"
+export DOTNET_ROOT=/snap/dotnet-sdk/current
 
 [[ $PATH =~ '/usr/src/bin' ]] || export PATH=$PATH':/usr/src/bin'
 [[ $PATH =~ "$HOME/Scripts" ]] || export PATH=$PATH":$HOME/Scripts"
