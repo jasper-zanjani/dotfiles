@@ -53,6 +53,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k 
 
+" Clone https://github.com/junegunn/vim-plug to ~/.vim/autoload
 call plug#begin('~/.vim/plugged')
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
