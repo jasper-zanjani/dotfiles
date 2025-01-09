@@ -1,0 +1,33 @@
+# Loopback entries; do not change.
+# For historical reasons, localhost precedes localhost.localdomain:
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+# See hosts(5) for proper format and other examples:
+# 192.168.1.10 foo.mydomain.org foo
+# 192.168.1.13 bar.mydomain.org bar
+192.168.0.10 	nas
+192.168.0.3 	little
+192.168.0.4 	big
+192.168.0.165 	f39
+
+# 192.168.0.107-9: RHEL
+# 192.168.0.117-9: CentOS
+# 192.168.0.127-9: Rocky
+# 192.168.0.138-9: Fedora
+# 192.168.0.148-9: Alma
+# 192.168.0.150-?: Applications
+
+192.168.0.100 rhel9
+192.168.0.7 rhel7
+192.168.0.117 centos7
+192.168.0.118 centos8
+192.168.0.119 centos9
+192.168.0.120 ubuntu2204 ubuntu22 ubuntu
+192.168.0.121 ubuntu2004 ubuntu20
+192.168.0.122 ubuntu1804 ubuntu18
+192.168.0.151 nexus01
+192.168.0.152 elastic01 elastic
+192.168.0.153 kibana01 kibana
+192.168.0.154 elastic02
+192.168.0.161 eth01
+192.168.0.162 ado01 ado
