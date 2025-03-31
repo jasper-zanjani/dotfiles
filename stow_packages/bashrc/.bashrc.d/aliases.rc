@@ -1,0 +1,13 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cfg='config'
+alias clip='xclip -selection clip'
+alias ls='ls --color=auto --group-directories-first'
+alias la='ls --color=auto --group-directories-first -a'
+alias ll='ls --color=auto --group-directories-first -lh'
+alias cat='bat --color=auto --style=plain'
+alias ip='ip -color -br'
+alias ffmpeg='ffmpeg -hide_banner'
+alias vim='/usr/bin/env nvim'
+STOW_DIR="$HOME/Documents/git/dotfiles/stow_packages"
+alias stow='stow --dir $STOW_DIR --target $HOME'

@@ -1,0 +1,9 @@
+# Create a random project name for use with cloud providers and other
+# use cases where a globally unique name is needed.
+newname () {
+  WORDS=$(shuf -n2 /usr/share/dict/words | tr '\n' '-')
+  CHARS=$(echo $RANDOM | md5sum )
+
+  echo "$WORDS""${CHARS:0:5}"
+}
+
