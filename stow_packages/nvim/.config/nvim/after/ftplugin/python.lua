@@ -1,0 +1,7 @@
+vim.keymap.set('n', '<F10>', function()
+    local file = vim.fn.expand("%")
+    local escaped_file = vim.fn.shellescape(file)
+    vim.cmd("vsplit")
+    vim.cmd("terminal python " .. escaped_file)
+    vim.api.nvim_feedkeys("i", "n", false)
+end)

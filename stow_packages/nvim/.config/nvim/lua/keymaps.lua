@@ -29,8 +29,6 @@ keymap("i", "<C-s>", "<Esc><cmd>w<CR>")
 keymap("v", "<C-s>", "<Esc><cmd>w<CR>gv")
 
 -- Ctrl-c/q to quit
-keymap("n", "<C-c>", "<cmd>qa!<CR>")
-keymap("i", "<C-c>", "<Esc><cmd>qa!<CR>")
 keymap("n", "<C-q>", "<cmd>qa!<CR>")
 keymap("i", "<C-q>", "<Esc><cmd>qa!<CR>")
 
