@@ -11,3 +11,4 @@ alias ffmpeg='ffmpeg -hide_banner'
 alias vim='/usr/bin/env nvim'
 STOW_DIR="$HOME/Documents/git/dotfiles/stow_packages"
 alias stow='stow --dir $STOW_DIR --target $HOME'
+alias yt-dlp='yt-dlp --embed-thumbnail --cookies-from-browser firefox --external-downloader aria2c --continue'

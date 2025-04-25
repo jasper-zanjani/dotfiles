@@ -7,3 +7,11 @@ newname () {
   echo "$WORDS""${CHARS:0:5}"
 }
 
+pw () {
+    openssl rand -base64 16
+}
+
+open () {
+    xdg-open $1
+}
+

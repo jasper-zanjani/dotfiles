@@ -8,9 +8,13 @@ config () {
             $EDITOR $ALAC_CONFDIR"/alacritty.toml"
             cd -
             ;;
-        cfg)    $EDITOR $HOME"/.bashrc.d/config.sh" ;;
-        note)   $EDITOR $HOME"/.bashrc.d/note.sh" ;;
-        nvim)
+        al*)    $EDITOR $HOME"/.bashrc.d/aliases.sh"        ;;
+        cfg)    $EDITOR $HOME"/.bashrc.d/config.sh"         ;;
+        f*)     $EDITOR $HOME"/.bashrc.d/functions.sh"      ;;
+        hx)     hx $HOME"/.config/helix/config.toml"        ;;
+        note)   $EDITOR $HOME"/.bashrc.d/note.sh"           ;;
+        pass)   $EDITOR $HOME"/.bashrc.d/pass.rc"           ;;
+        nv*)
             cd $NVIM_CONFDIR
             case $2 in 
                 k*) $EDITOR $NVIM_CONFDIR"/lua/keymaps.lua" ;;
@@ -19,9 +23,10 @@ config () {
             esac
             cd -
             ;;
-        vim)    $EDITOR $HOME"/.vimrc" ;;
-        re*)    source "$HOME""/.bashrc" ;; 
-        tr*)    $EDITOR $HOME"/.bashrc.d/trade.sh" ;;
-        *)      echo "Unknown application!" ;;
+        vim)    $EDITOR $HOME"/.vimrc"              ;;
+        re*)    source "$HOME""/.bashrc"            ;; 
+        tr*)    $EDITOR $HOME"/.bashrc.d/trade.sh"  ;;
+        xuid)   $EDITOR $HOME"/.bashrc.d/xuid.sh"   ;;
+        *)      echo "Unknown application!"         ;;
     esac
 }

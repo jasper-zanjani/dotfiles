@@ -27,6 +27,4 @@ fi
 unset rc
 . "$HOME/.cargo/env"
 
-alias yt-dlp='yt-dlp --external-downloader aria2c --continue'
-
 # [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
