@@ -9,10 +9,14 @@ vim.keymap.set({"n", "v"}, ";", ":")
 keymap({"n", "v"}, '<leader>y', '"+y')
 
 -- Use Ctrl-<motion> to navigate between panes
-keymap({ "n", 'i', 'v' }, "<C-h>", "<C-w>h")
-keymap({ "n", 'i', 'v' }, "<C-j>", "<C-w>j")
-keymap({ "n" , 'i', 'v'}, "<C-l>", "<C-w>l")
-keymap({ "n" , 'i', 'v'}, "<C-k>", "<C-w>k")
+keymap({ "n",  'v' }, "<C-h>", "<C-w>h")
+keymap({ "n",  'v' }, "<C-j>", "<C-w>j")
+keymap({ "n",  'v' }, "<C-l>", "<C-w>l")
+keymap({ "n",  'v' }, "<C-k>", "<C-w>k")
+keymap({ "i" }, "<C-h>", "<Esc><C-w>h")
+keymap({ "i" }, "<C-j>", "<Esc><C-w>j")
+keymap({ "i" }, "<C-l>", "<Esc><C-w>l")
+keymap({ "i" }, "<C-k>", "<Esc><C-w>k")
 keymap('t', '<C-j>', '<C-Bslash><C-N><C-w>j')
 keymap('t', '<C-h>', '<C-Bslash><C-N><C-w>h')
 keymap('t', '<C-k>', '<C-Bslash><C-N><C-w>k')
@@ -29,8 +33,6 @@ keymap("i", "<C-s>", "<Esc><cmd>w<CR>")
 keymap("v", "<C-s>", "<Esc><cmd>w<CR>gv")
 
 -- Ctrl-c/q to quit
-keymap("n", "<C-c>", "<cmd>qa!<CR>")
-keymap("i", "<C-c>", "<Esc><cmd>qa!<CR>")
 keymap("n", "<C-q>", "<cmd>qa!<CR>")
 keymap("i", "<C-q>", "<Esc><cmd>qa!<CR>")
 
@@ -59,23 +61,22 @@ keymap('n', '<C-r>', '<cmd>source %<CR>')
 -- keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 -- Telescope file-finder
--- keymap('n', '<leader><S-e>', '<cmd>Telescope find_files previewer=false theme=dropdown<CR>')
+keymap('n', '<leader>e', '<cmd>Telescope find_files previewer=false theme=dropdown<CR>')
 
 local telescope_find_files = [[ <cmd> lua require('telescope.builtin') .find_files(require('telescope.themes') .get_dropdown({previewer = false})) <CR>]]
 
 -- keymap('n', '<leader><S-e>', "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({previewer = false}))<CR>" )
-keymap('n', '<C-S-e>', telescope_find_files )
-keymap('n', '<leader>e', telescope_find_files )
-keymap('n', '<leader><S-e>', telescope_find_files )
+keymap('n', '<C-e>', telescope_find_files )
 
-keymap("n", "<C-S-f>", "<cmd>Telescope live_grep<CR>")
+-- Putting telescope_find_files within a closure appears to solve the issue with 
+-- keybindings not firing when the cursor is on the last character of a document.
+keymap('n', '<leader>=', function() require('telescope.builtin').find_files() end)
 keymap("n", "<leader>f", "<cmd>Telescope live_grep<CR>")
-keymap("n", "<leader><S-f>", "<cmd>Telescope live_grep<CR>")
 
 -- Indent document
 keymap('n', '<C-S-i>', '=ap<CR>')
 
-keymap('n', '<A-z>', '<cmd>set wrap!<CR>')
+keymap({'n', 'v', 'i'}, '<A-z>', '<cmd>set wrap!<CR>')
 
 -- Allows line joins to be done without moving cursor
 keymap('n', 'J', 'mzJ`z')
@@ -93,4 +94,14 @@ keymap('n', '<leader>p', require('harpoon.ui').nav_prev)
 
 
 keymap('t', '<Esc>', '<C-bslash><C-N>' )
-keymap({'n',}, '<leader>-', '<cmd>Explore<CR>')
+
+vim.keymap.set({ 'n', 'v' }, '<leader>-', ':Explore<Enter>')
+
+-- Insert newlines under cursor without entering Insert mode
+-- Found from https://www.reddit.com/r/neovim/comments/10kah18/how_to_insert_newline_without_entering_insert_mode/
+vim.keymap.set('n', '<CR>', "<Cmd>call append(line('.'), repeat([''], v:count1))<CR>")
+-- <S-CR> doesn't seem to work.., other modifiers don't feel right
+-- vim.keymap.set('n', '<leader><CR>', "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
+
+vim.keymap.set('n', '<A-l>', "<Cmd>set rnu!<CR>")
+
