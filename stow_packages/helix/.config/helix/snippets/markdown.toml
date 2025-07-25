@@ -1,0 +1,14 @@
+[[snippets]]
+prefix = "zzinc"
+scope = [ "markdown" ]
+body = '--8<-- "includes/$1"'
+description = "demo snippet"
+
+[[snippets]]
+prefix = "zzrs"
+scope = [ "markdown" ]
+body =  """
+```rs
+$1
+```"""
+description = "Rust code fence"

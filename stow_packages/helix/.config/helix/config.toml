@@ -1,0 +1,40 @@
+theme = "carbonfox"
+
+[keys.normal]
+";" = "command_mode"
+"C-j" = "jump_view_down"
+"C-k" = "jump_view_up"
+"C-h" = "jump_view_left"
+"C-l" = "jump_view_right"
+"A-z" = ":toggle soft-wrap.enable"
+"C-s" = ":write"
+# move/copy line below/above
+"A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
+"A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+"A-J" = [ "extend_to_line_bounds", "yank", "paste_after" ]
+"A-K" = [ "extend_to_line_bounds", "yank", "paste_before" ]
+# previous/next buffer
+H = "goto_previous_buffer"
+L = "goto_next_buffer"
+
+[keys.insert]
+"C-s" = ["normal_mode", ":write"]
+
+[keys.normal.space]
+minus = "file_picker"
+
+[editor]
+auto-pairs = false
+cursorline = true
+bufferline = "multiple"
+idle-timeout = 1
+
+[editor.soft-wrap]
+enable = true
+
+[editor.smart-tab]
+enable = false
+
+[editor.cursor-shape]
+insert = "bar"
+
